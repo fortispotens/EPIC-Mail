@@ -1,0 +1,176 @@
+html {
+  -webkit-text-size-adjust: 100%; 
+  -ms-text-size-adjust: 100%;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Lato, sans-serif;
+}
+
+a {
+  color: #fff;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.header {
+  min-height: 50px;
+  background: linear-gradient(to right, #22026b, #280c50);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+}
+
+.header ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header ul li a {
+  display: inline-block;
+  padding: 20px;
+}
+
+.header ul li:hover {
+  background-color: #6a819c;
+}
+
+.main {
+  background: #122c460f;
+  height: 85vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-caption {
+  text-align: center;
+}
+.caption-text {
+  color: #fff;
+  line-height: 80px;
+}
+
+.caption-text h1 {
+  font-size: 72px;
+}
+
+.caption-text p {
+  font-size: 36px;
+}
+
+button {
+  background: #22026b;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 20px 50px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.footer {
+  background: linear-gradient(to right, #22026b, #280c50);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  flex-wrap: wrap;
+  flex: 0 1 60%;
+  color: rgb(24, 20, 32);
+  min-height: 95px;
+}
+
+.footer p {
+  color: #fff;
+}
+
+.footer ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer ul li a {
+  display: inline-block;
+  padding: 20px;
+}
+
+.footer ul li:hover {
+  background-color: #6a819c;
+}
+
+#main {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/epic-mail.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media all and (max-width:550px) and (min-width:0px) {
+  
+  .header {
+    min-height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 5%;
+  }
+
+  .header h1 {
+    font-size: 2em;
+    margin-bottom: 5%
+  }
+  
+  .header ul li a {
+    padding: 15px;
+  }
+
+  li {
+    margin: 3px;
+  }
+
+  .main {
+    height: 70vh;
+  }
+
+  .main-caption h1 {
+    width: 100%;
+    font-size: 2em;
+    font-weight: 400;
+  }
+
+  .main-caption p {
+    font-size: 1em;
+  }
+
+  .caption-text {
+    color: #fff;
+    line-height: 50px;
+  }
+
+  .call-to-action {
+    width: 80%;
+    font-size: 1em;
+  }
+  
+  .footer {
+    min-height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 5%;
+  }
+}
