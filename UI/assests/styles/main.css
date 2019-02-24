@@ -13,12 +13,6 @@ body {
   font-family: Lato, sans-serif;
 }
 
-a {
-  color: #fff;
-  list-style-type: none;
-  text-decoration: none;
-}
-
 .header {
   min-height: 50px;
   background: linear-gradient(to right, #22026b, #280c50);
@@ -33,6 +27,13 @@ a {
   font-size: 2rem;
 }
 
+.header a {
+  color: #fff;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+
 .header ul {
   display: flex;
   flex-wrap: wrap;
@@ -41,6 +42,9 @@ a {
 .header ul li a {
   display: inline-block;
   padding: 20px;
+  color: #fff;
+  list-style-type: none;
+  text-decoration: none;
 }
 
 .header ul li:hover {
@@ -83,6 +87,17 @@ button {
   cursor: pointer;
 }
 
+.text-btn {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.text-btn:hover {
+  color:#22026b;
+  background: #ad9fcf; 
+  padding: 5px 15px;
+}
+
 .footer {
   background: linear-gradient(to right, #22026b, #280c50);
   display: flex;
@@ -107,6 +122,11 @@ button {
 .footer ul li a {
   display: inline-block;
   padding: 20px;
+  display: inline-block;
+  padding: 20px;
+  color: #fff;
+  list-style-type: none;
+  text-decoration: none;
 }
 
 .footer ul li:hover {

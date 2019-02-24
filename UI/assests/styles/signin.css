@@ -1,0 +1,7 @@
+.forgot-password a {
+  width: 50%;
+  color: #22026b;
+  list-style-type: none;
+  text-decoration: none;
+  border: 1px solid black;
+}
