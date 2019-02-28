@@ -1,0 +1,116 @@
+.signin-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.form-container {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 2px;
+}
+
+.form > * {
+  border: 0;
+  padding: 10px;
+  background: #fff;
+  line-height: 30px;
+  font-size: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px 20px;
+  width: 100%;
+}
+
+.form h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.form input {
+  height: 40px;
+  font-size: 16px;
+  margin:5px 0px;
+  padding-left: 4%;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #2a177a;
+  outline: none;
+}
+
+.form input::placeholder {
+  color: #000;
+}
+
+#signup-btn {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  background: #22026b;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  padding: 10px 50px;
+  margin-top: 3%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  align-self: center;
+}
+
+#signup-btn:hover {
+  color:#22026b;
+  background: #ad9fcf;
+  font-weight:700;
+}
+
+#login-message {
+  color:#22026b;
+  font-weight:700;
+  line-height:1.5;
+  align-self: center;
+  margin-top: 5%;
+  font-size: 1.2rem;
+}
+
+#login-message a {
+  color:#22026b;
+  padding: 5px 15px;
+  border-radius: 2px;
+}
+
+#login-message a:hover {
+  color:#22026b;
+  background: #ad9fcf; 
+}
+
+@media all and (max-width:550px) and (min-width:0px) {
+  
+  .form {
+    margin: 10px 10px;
+  }
+
+  .form > * {
+    line-height: 10px;
+  }
+
+  .form-container {
+    width: 300px;
+  }
+  
+  #signup-btn {
+    width: 80%;
+    padding: 15px 50px;
+    margin-top: 5%;
+
+  }
+}
