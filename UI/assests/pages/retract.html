@@ -11,6 +11,8 @@
 	<link rel="stylesheet" media="screen" href="../styles/signup.css">
 	<link rel="stylesheet" media="screen" href="../styles/dashboard.css">
 	<link rel="stylesheet" media="screen" href="../styles/creategroup.css">
+	<link rel="stylesheet" media="screen" href="../styles/sendmessage.css">
+	<link rel="stylesheet" media="screen" href="../styles/inbox.css">
 </head>
 <body>
 	<header class="header">
@@ -45,29 +47,24 @@
             </div>
           </div>
           <div class="dashboard-items">
-            <form class="create-group">
-              <div class="create-control">
-                <input type="text" name="group-name" id="group-name" placeholder="Enter Group member email" required>
-                <input type="button" value="Add member">
-              </div>
-              <div class="create-control">
-              <input type="text" name="group-name" id="group-name" placeholder="Enter Group name" required>
-              <input type="button" value="Create Group">
-              </div>
-            </form>
             <div class="groups">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>SN</th>
-                      <th>Group Name</th>
-                      <th>Group members</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  </tbody>
-                </table>
-              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>From</th>
+                    <th>Message</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Tobechukwu</td>
+                    <td>I am coming from School</td>
+                    <td><input id="retract" type="button" value="Retract"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
