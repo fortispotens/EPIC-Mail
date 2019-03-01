@@ -1,8 +1,6 @@
 .create-group {
-  /* display: flex; */
   flex-wrap: wrap;
   justify-content: space-between;
-  /* border: 1px solid #000; */
 }
 
 .create-group input {
@@ -10,7 +8,6 @@
 }
 
 .create-group input[type='text'] {
-  /* margin: 0.75rem 0; */
   line-height: 2rem;
   padding: 0 0.5rem;
   width: fit-content;
@@ -30,7 +27,7 @@
 }
 
 textarea {
-  width: 100%;
+  width: 80vw;;
 }
 
 textarea::placeholder {
@@ -61,16 +58,25 @@ table tr th {
 table tr td, table tr th {
   padding: 1rem;
   margin: 1.5rem 0;
-  text-align: center;
+  text-align: left;
+}
+
+tbody, td, tr:nth-child(odd) {
+  background-color: #ffffff;
+  border: 1px solid #22026b;
 }
 
 @media all and (max-width:550px) and (min-width:0px) {
-  .input-group input[type='text'] {
+  
+  .create-group {
+    justify-content: center;
+  }
+  .create-group input[type='text'] {
     width: 80vw;
     margin-bottom: 0.4rem;
   }
   
-  .input-group input[type='button'] {
+  .create-group input[type='button'] {
     width: 80vw;
   }
 }

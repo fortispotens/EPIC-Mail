@@ -9,29 +9,35 @@
 }
 
 .wrapper {
+  width: 100vw;
+  align-content: center;
   margin-top: 2rem;
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 .dashboard-links {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 2rem;
 }
 
 .links {
-  border-right: 1rem solid #cccccc;
+  width: 140px;
+  border-right: 0.5rem solid #cccccc;
+  margin-bottom: 0.75rem; 
+  background: #22026b;
+  text-align: center;
 }
 
 .links a {
   display: inline-block;
   padding: 1rem 0.75rem;
-  background: #22026b;
-  color: #fff;
   text-decoration: none;
+  color: #fff;
 }
 
 .dashboard-items {
-  width: fit-content;
+  width: 100vw;;
   margin: 2rem 0;
   padding: 0.4rem;
 }
