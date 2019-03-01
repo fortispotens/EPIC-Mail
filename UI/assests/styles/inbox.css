@@ -1,9 +1,15 @@
-#view, #retract {
+#view, #retract, #delete {
+  width: 60px;
   font-size: 0.75rem;
   background-color: green;
   color: #ffffff;
   border: none;
-  padding: 0.25rem 0.8rem;
+  margin: 0.3rem 0;
+  padding: 0.3rem 0.8rem;
+}
+
+#delete {
+  background-color: red;
 }
 
 table tr td, table tr th {
