@@ -18,6 +18,10 @@
   margin-top: 2rem;
 }
 
+.links {
+  border-right: 1rem solid #cccccc;
+}
+
 .links a {
   display: inline-block;
   padding: 1rem 0.75rem;

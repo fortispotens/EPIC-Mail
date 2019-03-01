@@ -65,12 +65,12 @@ table tr td, table tr th {
 }
 
 @media all and (max-width:550px) and (min-width:0px) {
-  .create-group input[type='text'] {
+  .input-group input[type='text'] {
     width: 80vw;
     margin-bottom: 0.4rem;
   }
   
-  .create-group input[type='button'] {
+  .input-group input[type='button'] {
     width: 80vw;
   }
 }
