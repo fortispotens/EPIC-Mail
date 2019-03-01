@@ -11,6 +11,7 @@
 	<link rel="stylesheet" media="screen" href="../styles/signup.css">
 	<link rel="stylesheet" media="screen" href="../styles/dashboard.css">
 	<link rel="stylesheet" media="screen" href="../styles/creategroup.css">
+	<link rel="stylesheet" media="screen" href="../styles/sendmessage.css">
 </head>
 <body>
 	<header class="header">
@@ -39,29 +40,17 @@
             </div>
           </div>
           <div class="dashboard-items">
-            <form class="create-group">
-              <div class="create-control">
-                <input type="text" name="group-name" id="group-name" placeholder="Enter Group member email" required>
-                <input type="button" value="Add member">
-              </div>
-              <div class="create-control">
-              <input type="text" name="group-name" id="group-name" placeholder="Enter Group name" required>
-              <input type="button" value="Create Group">
+            <form class="send-message">
+              <div class="message-control">
+                <p class="label">From:</p>
+                <p class="message-items"><input type="text" name="sender" id="sender" placeholder="Sender email" required></p>
+                <p class="label">To:</p>
+                <p class="message-items"><input type="text" name="reciever" id="reciever" placeholder="Reciever email" required></p>
+                <p class="label">Your message:</p>
+                <p><textarea name="message-body" id="message-body" cols="50" rows="8" placeholder="Enter your message" required></textarea></p>
+                <input id="send-message" type="button" value="Send Message">
               </div>
             </form>
-            <div class="groups">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>SN</th>
-                      <th>Group Name</th>
-                      <th>Group members</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  </tbody>
-                </table>
-              </div>
           </div>
         </div>
       </div>
