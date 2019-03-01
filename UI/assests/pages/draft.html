@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>EPIC-Mail</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+	<link rel="stylesheet" media="screen" href="../styles/reset.css">
+	<link rel="stylesheet" media="screen" href="../styles/main.css">
+	<link rel="stylesheet" media="screen" href="../styles/signup.css">
+	<link rel="stylesheet" media="screen" href="../styles/dashboard.css">
+	<link rel="stylesheet" media="screen" href="../styles/creategroup.css">
+	<link rel="stylesheet" media="screen" href="../styles/sendmessage.css">
+</head>
+<body>
+  <div class="container">
+	<header class="header">
+		<div><a href="../../index.html"><h1>EPIC-Mail</h1></a></div>
+		<nav>
+			<ul>
+				<li><a href="../../index.html">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="../../index.html">Log out</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main class="main" id="main">
+		<section> 
+      <div class="dashboard-container">
+        <div class="wrapper">
+          <div class="dashboard-greeting">
+            <h1>Welcome</h1>
+          </div>
+          <div class="dashboard-links">
+            <div class="links">
+              <a href="creategroup.html">Create Group</a>
+            </div>
+            <div class="links">
+              <a href="sendmessage.html">Send Message</a>
+            </div>
+            <div class="links">
+              <a href="inbox.html">View Inbox</a>
+            </div>
+            <div class="links">
+              <a href="retract.html">Sent Messages</a>
+            </div>
+            <div class="links">
+              <a href="draft.html">Draft Messages</a>
+            </div>
+          </div>
+          <div class="dashboard-items">
+            <form class="send-message">
+              <div class="message-control">
+                <p class="label">From:</p>
+                <p class="message-items"><input type="text" name="sender" id="sender" placeholder="Sender email" required></p>
+                <p class="label">To:</p>
+                <p class="message-items"><input type="text" name="reciever" id="reciever" placeholder="Reciever email" required></p>
+                <p class="label">Your message:</p>
+                <p><textarea name="message-body" id="message-body" cols="50" rows="8" placeholder="Enter your message" required></textarea></p>
+                <input id="send-message" type="button" value="Send Message">
+                <input id="draft-message" type="button" value="Save as Draft">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+  </section>
+	</main>
+	<footer class="footer">
+		<div><p>&copy; Tobechukwu Obitube - 2019</p></div>
+			<nav>
+				<ul>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#">FAQs</a></li>
+				</ul>
+			</nav>
+  </footer> 
+</div>
+</body>
+</html>
