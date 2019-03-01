@@ -1,0 +1,76 @@
+.create-group {
+  /* display: flex; */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* border: 1px solid #000; */
+}
+
+.create-group input {
+  font-size: 1rem;
+}
+
+.create-group input[type='text'] {
+  /* margin: 0.75rem 0; */
+  line-height: 2rem;
+  padding: 0 0.5rem;
+  width: fit-content;
+}
+
+.create-group input[type='button'] {
+  padding: 0.45rem;
+  background: #22026b;
+  color: #fff;
+  width: 10rem;
+  border: 1px solid #22026b;
+  outline: none;
+}
+
+.create-control {
+  margin-bottom: 2rem;
+}
+
+textarea {
+  width: 100%;
+}
+
+textarea::placeholder {
+  font-size: 1rem;
+  line-height: 2rem;
+  padding: 0 0.5rem;
+  width: fit-content;
+}
+
+.groups {
+  margin: 2rem 0;
+}
+
+table {
+  width: 80vw;
+  border: 1px solid #efefef;
+  border-left: none;
+  border-right: none;
+}
+
+table tr th {
+  background: #22026b;
+  color: #fff;
+  border: 1px solid #efefef;
+  text-transform: uppercase;
+}
+
+table tr td, table tr th {
+  padding: 1rem;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+@media all and (max-width:550px) and (min-width:0px) {
+  .create-group input[type='text'] {
+    width: 80vw;
+    margin-bottom: 0.4rem;
+  }
+  
+  .create-group input[type='button'] {
+    width: 80vw;
+  }
+}

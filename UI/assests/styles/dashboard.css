@@ -1,0 +1,33 @@
+#main {
+  background: #efefef;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.dashboard-container {
+  height: 80vh;
+}
+
+.wrapper {
+  margin-top: 2rem;
+  padding: 0 2rem;
+}
+
+.dashboard-links {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.links a {
+  display: inline-block;
+  padding: 1rem 0.75rem;
+  background: #22026b;
+  color: #fff;
+  text-decoration: none;
+}
+
+.dashboard-items {
+  width: fit-content;
+  margin: 2rem 0;
+  padding: 0.4rem;
+}
