@@ -79,4 +79,8 @@ tbody, td, tr:nth-child(odd) {
   .create-group input[type='button'] {
     width: 80vw;
   }
+  textarea {
+    width: 80vw;;
+  }
+
 }
