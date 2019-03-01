@@ -9,7 +9,6 @@
 }
 
 .wrapper {
-  width: 100vw;
   align-content: center;
   margin-top: 2rem;
   padding: 0 1rem;
@@ -37,7 +36,7 @@
 }
 
 .dashboard-items {
-  width: 100vw;;
+  width: 40vw;
   margin: 2rem 0;
   padding: 0.4rem;
 }
