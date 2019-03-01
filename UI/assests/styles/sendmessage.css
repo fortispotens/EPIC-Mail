@@ -17,7 +17,7 @@
   margin-bottom: 0.4rem;
 }
 
-#send-message {
+#send-message, #draft-message {
   margin-top: 0.5rem;
   padding: 0.5rem;
   background: #22026b;
