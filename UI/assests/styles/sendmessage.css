@@ -1,3 +1,7 @@
+.send-message {
+  width: 40vw;
+}
+
 .send-message input[type='text'], #message-body  {
   border: 1px solid #efefef;
   padding-left: 5px;
@@ -26,11 +30,11 @@
     width: 80vw;
   }
   
-  .imessage-control input[type='button'] {
+  .message-control input[type='button'] {
     width: 80vw;
   }
-
+/* 
   #send-message {
     width: 80vw;
-  }
+  } */
 }
