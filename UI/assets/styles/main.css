@@ -14,17 +14,15 @@ body {
 }
 
 .container {
-  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-items: space-between;
 }
 
 .header {
-  min-height: 10vh;
+  min-height: 7vh;
   background: linear-gradient(to right, #22026b, #280c50);
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
@@ -59,7 +57,7 @@ body {
 
 .main {
   background: #122c460f;
-  min-height: 110vh;
+  min-height: 83.9vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -109,10 +107,8 @@ button {
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
-  flex-wrap: wrap;
-  flex: 0 1 60%;
   color: rgb(24, 20, 32);
-  min-height: 10vh;
+  min-height: 7vh;
 }
 
 .footer p {
@@ -146,24 +142,20 @@ button {
 
 @media all and (max-width:550px) and (min-width:0px) {
   
-  .header {
+  .header, .footer {
+    min-height: 15vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 5%;
   }
 
   .header h1 {
     font-size: 2em;
-    margin-bottom: 5%
+    margin-top: 5%;
   }
   
-  .header ul li a {
-    padding: 15px;
-  }
-
-  li {
-    margin: 3px;
+  .main {
+    min-height: 70vh;
   }
 
   .main-caption h1 {
@@ -182,14 +174,7 @@ button {
   }
 
   .call-to-action {
-    width: 80%;
     font-size: 1em;
   }
   
-  .footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 5%;
-  }
 }

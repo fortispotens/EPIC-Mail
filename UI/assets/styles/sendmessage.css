@@ -26,15 +26,7 @@
 }
 
 @media all and (max-width:550px) and (min-width:0px) {
-  .message-control input[type='text'] {
+  .message-control input[type='text'], .message-control input[type='button'] {
     width: 80vw;
   }
-  
-  .message-control input[type='button'] {
-    width: 80vw;
-  }
-/* 
-  #send-message {
-    width: 80vw;
-  } */
 }
