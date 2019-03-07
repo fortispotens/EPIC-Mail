@@ -57,7 +57,7 @@ body {
 
 .main {
   background: #122c460f;
-  min-height: 83.9vh;
+  min-height: 86vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
