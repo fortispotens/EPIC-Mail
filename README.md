@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/riseagain47/EPIC-Mail/badge.svg)](https://coveralls.io/github/riseagain47/EPIC-Mail)
+
 ## EPIC Mail
 
 This web application will help people exchange
