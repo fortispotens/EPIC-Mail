@@ -1,0 +1,36 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Node.js server for EPIC-Mail",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riseagain47/EPIC-Mail.git"
+  },
+  "keywords": [
+    "EPIC-Mail",
+    "Challenge 2",
+    "Backend",
+    "Node.js"
+  ],
+  "author": "Tobechukwu Obitube",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/riseagain47/EPIC-Mail/issues"
+  },
+  "homepage": "https://github.com/riseagain47/EPIC-Mail#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "moment": "^2.24.0",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-watch": "^7.0.0"
+  }
+}
