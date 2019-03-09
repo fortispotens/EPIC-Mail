@@ -1,13 +1,20 @@
+import chai from 'chai';
 import { expect } from 'chai';
-import request from 'request';
+import chaiHttp from 'chai-http';
+import app from '../server';
+
+chai.use(chaiHttp);
+const request = chai.request(app);
 
 describe('Status', () => {
   describe('Main page', () => {
     it('status', (done) => {
-      request('http://localhost:8080', (error, response) => {
-        expect(response.statusCode).to.equal(404);
-        done();
-      });
+      chai.request(app)
+        .get('/api/v1/')
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(200);
+          done();
+        });
     });
   });
 });
