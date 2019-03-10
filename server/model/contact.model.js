@@ -1,4 +1,4 @@
-class Contacts {
+class Contact {
   constructor() {
     this.id = null;
     this.email = null;
@@ -7,4 +7,4 @@ class Contacts {
   }
 }
 
-export default Contacts;
+export default Contact;

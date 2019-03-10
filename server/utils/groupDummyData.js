@@ -1,5 +1,5 @@
 export default {
-  group: [
+  groups: [
     {
       id: 1,
       name: 'First'
