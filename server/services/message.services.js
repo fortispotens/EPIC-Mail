@@ -23,6 +23,14 @@ const MessageService = {
     });
     return validMessages;
   },
+  fetchUnreadMessage(status) {
+    const unreadMessage = messagesDummyData.messages.find(message => message.status === status);
+    return unreadMessage || {};
+  },
+  fetchSentMessage(status) {
+    const sentMessage = messagesDummyData.messages.find(message => message.status === status);
+    return sentMessage || {};
+  },
   fetchSpecificMessage(id) {
     const message = messagesDummyData.messages.find(message => message.id === id);
     return message || {};
