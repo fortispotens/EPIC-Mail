@@ -1,5 +1,5 @@
 export default {
-  user: [
+  users: [
     {
       id: 1,
       email: 'abc@code.com',

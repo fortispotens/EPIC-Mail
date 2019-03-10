@@ -1,4 +1,4 @@
-class Messages {
+class Message {
   constructor() {
     this.id = null;
     this.createdOn = null;
@@ -9,4 +9,4 @@ class Messages {
   }
 }
 
-export default Messages;
+export default Message;
