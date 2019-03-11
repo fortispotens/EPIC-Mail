@@ -6,9 +6,9 @@
   "scripts": {
     "start": "nodemon --exec babel-node server/server.js",
     "lint": "./node_modules/.bin/eslint server/test/*.js",
-    "test": "nyc --reporter=lcov --reporter=html --reporter=text ./node_modules/.bin/_mocha --require @babel/register --watch server/test/*.js --timeout 10s --exit",
-    "coverage": "nyc ./node_modules/.bin/_mocha",
-    "coveralls": "nyc ./node_modules/.bin/_mocha && cat ./coverage/lcov.info | coveralls"
+    "test": "nyc ./node_modules/.bin/_mocha --require @babel/register --watch server/test/*.js --timeout 10s --exit",
+    "coverage": "nyc --reporter=lcov --reporter=html --reporter=text ./node_modules/.bin/_mocha",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
