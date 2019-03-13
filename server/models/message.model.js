@@ -1,6 +1,7 @@
 import moment from 'moment';
 import uuid from 'uuid';
 
+let id = 0;
 
 class Message {
   constructor() {
@@ -9,38 +10,16 @@ class Message {
 
   createNewMessage(data) {
     const newMessage = {
-      id: uuid.v4(),
-      createdOn: moment.now(),
+      id: this.messages.length + 1,
+      createdOn: new Date().toLocaleDateString(),
       subject: data.subject,
       message: data.message,
-      parentMessageId: data.parentMessageId,
-      status: data.status
+      parentMessageId: this.messages.length + 1,
+      status: 'unread'
     };
+    // console.log(createNewMessage.createdOn);
     this.messages.push(newMessage);
     return newMessage;
-  }
-
-  fetchAllMessages() {
-    return this.messages;
-  }
-
-  fetchUnreadMessage(unread) {
-    return this.messages.find(message => message.status === unread);
-  }
-
-  fetchSentMessage(sent) {
-    return this.messages.find(message => message.status === sent);
-  }
-
-  fetchSpecificMessage(id) {
-    return this.messages.find(message => message.id === id);
-  }
-
-  deleteSpecificMessage(id) {
-    const message = this.fetchSpecificMessage(id);
-    const index = this.messages.indexOf(message);
-    this.messages.splice(index, 1);
-    return {};
   }
 }
 
