@@ -4,7 +4,7 @@
   "description": "Node.js server for EPIC-Mail",
   "main": "server.js",
   "scripts": {
-    "test": "nyc mocha --timeout 100000 --require @babel/register --require @babel/polyfill server/test --exit || true",
+    "test": "nyc mocha --timeout 10000 --require @babel/register --require @babel/polyfill server/test --exit || true",
     "start": "nodemon --exec babel-node server/server.js",
     "lint": "./node_modules/.bin/eslint server/test/*.js",
     "coverage": "nyc --reporter=lcov --reporter=html --reporter=text mocha --require @babel/register server/test/*.js --exit || true",
@@ -17,7 +17,7 @@
   "keywords": [
     "EPIC-Mail",
     "Challenge 2",
-    "Backend",
+    "API",
     "Node.js"
   ],
   "author": "Tobechukwu Obitube",
