@@ -1,6 +1,7 @@
 import moment from 'moment';
 import uuid from 'uuid';
 
+let id = 0;
 
 class User {
   constructor() {
@@ -9,7 +10,7 @@ class User {
 
   userSignup(data) {
     const newUser = {
-      id: uuid.v4(),
+      id: ++id,
       email: data.email,
       firstName: data.firstName,
       lastName: data.lastName,
@@ -21,7 +22,7 @@ class User {
 
   userLogin(data) {
     const existingUser = {
-      id: uuid.v4(),
+      id: ++id,
       email: data.email,
       password: data.password
     };
