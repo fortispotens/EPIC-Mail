@@ -4,11 +4,11 @@
   "description": "Node.js server for EPIC-Mail",
   "main": "server.js",
   "scripts": {
+    "test": "nyc mocha --timeout 100000 --require @babel/register --require @babel/polyfill server/test --exit || true",
     "start": "nodemon --exec babel-node server/server.js",
     "lint": "./node_modules/.bin/eslint server/test/*.js",
-    "test": "nyc ./node_modules/.bin/_mocha --require @babel/register --watch server/test/*.js --timeout 10s --exit || true",
-    "coverage": "nyc --reporter=lcov --reporter=html --reporter=text ./node_modules/.bin/_mocha --require @babel/register server/test/*.js --exit || true",
-    "coveralls": "nyc ./node_modules/.bin/_mocha --require @babel/register server/test/*.js --exit || true"
+    "coverage": "nyc --reporter=lcov --reporter=html --reporter=text mocha --require @babel/register server/test/*.js --exit || true",
+    "coveralls": "nyc mocha --require @babel/register server/test/*.js --exit || true"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/riseagain47/EPIC-Mail#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
     "expect": "^24.3.1",
