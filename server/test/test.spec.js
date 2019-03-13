@@ -1,7 +1,7 @@
 import chai from 'chai';
 import { expect } from 'chai';
 import chaiHttp from 'chai-http';
-import app from '../server';
+import app from '../app';
 
 chai.use(chaiHttp);
 const request = chai.request(app);
@@ -12,7 +12,8 @@ describe('Status', () => {
       chai.request(app)
         .get('/api/v1/')
         .end((err, res) => {
-          expect(res.statusCode).to.equal(200);
+          expect(res.status).to.equal(200);
+          expect(res.body).to.be.a('object');
           done();
         });
     });
