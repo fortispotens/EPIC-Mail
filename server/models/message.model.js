@@ -1,8 +1,6 @@
 import moment from 'moment';
 import uuid from 'uuid';
 
-let id = 0;
-
 class Message {
   constructor() {
     this.messages = [];
@@ -17,7 +15,6 @@ class Message {
       parentMessageId: this.messages.length + 1,
       status: 'unread'
     };
-    // console.log(createNewMessage.createdOn);
     this.messages.push(newMessage);
     return newMessage;
   }
