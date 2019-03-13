@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 
 import messageRoutes from './routes/messages.route';
-import UserRoutes from './routes/user.routes';
+import UserRoutes from './routes/users.route';
 
 const app = express();
 

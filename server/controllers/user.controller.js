@@ -13,6 +13,17 @@ const UserController = {
       signUpData
     });
   },
+  userLogin(req, res) {
+    if (!req.body.email || !req.body.password) {
+      return res.status(400).json({ message: 'Enter your Email or Password' });
+    }
+    const loginData = UserModel.userSignup(req.body);
+    return res.status(201).json({
+      status: res.statusCode,
+      message: 'Login was successful',
+      loginData
+    });
+  }
 };
 
 export default UserController;
