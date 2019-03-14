@@ -8,7 +8,7 @@ class Message {
 
   createNewMessage(data) {
     const newMessage = {
-      id: this.messages.length + 1,
+      id: uuid.v4(),
       createdOn: new Date().toString(),
       subject: data.subject,
       message: data.message,
@@ -33,6 +33,12 @@ class Message {
 
   fetchSentMessage(sent) {
     return this.messages.filter(message => message.status === 'sent');
+  }
+
+  deleteOneMessage(id) {
+    const message = this.fetchSpecificMessage(id);
+    const messageIndex = this.messages.indexOf(message);
+    return this.messages.splice(messageIndex, 1);
   }
 }
 

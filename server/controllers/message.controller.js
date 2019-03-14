@@ -12,7 +12,7 @@ const MessageController = {
     const createdMessage = MessageModel.createNewMessage(req.body);
     return res.status(201).json({
       status: res.statusCode,
-      message: 'Message sent successfully',
+      message: 'Message created successfully',
       createdMessage
     });
   },
@@ -59,6 +59,18 @@ const MessageController = {
       status: res.statusCode,
       message: 'Fetched all sent Messages successfully',
       sentMessage
+    });
+  },
+
+  deleteSpecificMessage(req, res) {
+    const message = MessageModel.fetchSpecificMessage(req.params.id);
+    if (!message) {
+      res.status(404).json({ message: 'Message is not found' });
+    }
+    const deletedmessage = MessageModel.deleteOneMessage(req.params.id);
+    res.status(204).json({
+      status: res.statusCode,
+      deletedmessage
     });
   }
 };

@@ -8,8 +8,9 @@ const router = Router();
 router.post('/', MessageController.sendNewMessage);
 router.get('/', MessageController.getAllMessages);
 router.get('/:id', MessageController.getSpecificMessage);
-router.get('/messages/unread', MessageController.getUnreadMessage);
-router.get('/messages/sent', MessageController.getSentMessage);
+router.get('/status/unread', MessageController.getUnreadMessage);
+router.get('/status/sent', MessageController.getSentMessage);
+router.delete('/:id', MessageController.deleteSpecificMessage);
 
 
 export default router;
