@@ -11,7 +11,7 @@ const MessageController = {
     }
     const createdMessage = MessageModel.createNewMessage(req.body);
     return res.status(201).json({
-      status: 201,
+      status: res.statusCode,
       message: 'Message sent successfully',
       createdMessage
     });
@@ -21,10 +21,21 @@ const MessageController = {
     if (allMessages.length === 0) {
       return res.status(400).json({ message: 'There are no messages' });
     }
-    return res.json({
-      status: 200,
+    return res.status(200).json({
+      status: res.statusCode,
       message: 'Fetched All Messages successfully',
       allMessages
+    });
+  },
+  getSpecificMessage(req, res) {
+    const specificMessage = MessageModel.fetchSpecificMessage(Number(req.params.id));
+    if (!specificMessage) {
+      return res.status(404).json({ message: 'Sorry, message not found' });
+    }
+    return res.status(200).send({
+      status: res.statusCode,
+      message: 'Fetched Message successfully',
+      specificMessage
     });
   }
 };

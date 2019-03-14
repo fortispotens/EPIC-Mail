@@ -7,5 +7,7 @@ const router = Router();
 
 router.post('/', MessageController.sendNewMessage);
 router.get('/', MessageController.getAllMessages);
+router.get('/:id', MessageController.getSpecificMessage);
+
 
 export default router;
