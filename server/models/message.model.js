@@ -12,7 +12,7 @@ class Message {
       createdOn: new Date().toString(),
       subject: data.subject,
       message: data.message,
-      parentMessageId: this.messages.length + 1,
+      parentMessageId: data.parentMessageId,
       status: 'unread'
     };
     this.messages.push(newMessage);
@@ -21,6 +21,10 @@ class Message {
 
   fetchAllMessages() {
     return this.messages;
+  }
+
+  fetchSpecificMessage(id) {
+    return this.messages.find(message => message.id === id);
   }
 }
 
