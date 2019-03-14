@@ -9,7 +9,7 @@ class Message {
   createNewMessage(data) {
     const newMessage = {
       id: this.messages.length + 1,
-      createdOn: new Date().toLocaleDateString(),
+      createdOn: new Date().toString(),
       subject: data.subject,
       message: data.message,
       parentMessageId: this.messages.length + 1,
@@ -17,6 +17,10 @@ class Message {
     };
     this.messages.push(newMessage);
     return newMessage;
+  }
+
+  fetchAllMessages() {
+    return this.messages;
   }
 }
 
