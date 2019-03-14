@@ -30,6 +30,10 @@ class Message {
   fetchUnreadMessage() {
     return this.messages.filter(message => message.status === 'unread');
   }
+
+  fetchSentMessage(sent) {
+    return this.messages.filter(message => message.status === 'sent');
+  }
 }
 
 export default new Message();
