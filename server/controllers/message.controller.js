@@ -15,6 +15,17 @@ const MessageController = {
       message: 'Message sent successfully',
       createdMessage
     });
+  },
+  getAllMessages(req, res) {
+    const allMessages = MessageModel.fetchAllMessages();
+    if (allMessages.length === 0) {
+      return res.status(400).json({ message: 'There are no messages' });
+    }
+    return res.json({
+      status: 200,
+      message: 'Fetched All Messages successfully',
+      allMessages
+    });
   }
 };
 
