@@ -48,6 +48,18 @@ const MessageController = {
       message: 'Fetched all unread Messages successfully',
       unreadMessage
     });
+  },
+  getSentMessage(req, res) {
+    const sentMessage = MessageModel.fetchAllMessages(req.body.status)
+          || MessageModel.fetchAllMessages();
+    if (sentMessage.length === 0) {
+      return res.status(404).json({ message: 'Sorry, there are no sent messages' });
+    }
+    return res.json({
+      status: res.statusCode,
+      message: 'Fetched all sent Messages successfully',
+      sentMessage
+    });
   }
 };
 
