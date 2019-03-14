@@ -8,7 +8,7 @@ class Message {
 
   createNewMessage(data) {
     const newMessage = {
-      id: this.messages.length + 1,
+      id: uuid.v4(),
       createdOn: new Date().toString(),
       subject: data.subject,
       message: data.message,
@@ -36,10 +36,9 @@ class Message {
   }
 
   deleteOneMessage(id) {
-    const message = this.messages.find(message => message.id === id);
-    const index = this.messages.indexOf(message);
-    const deletedMessage = this.messages.splice(index, 1);
-    return deletedMessage;
+    const message = this.fetchSpecificMessage(id);
+    const messageIndex = this.messages.indexOf(message);
+    return this.messages.splice(messageIndex, 1);
   }
 }
 

@@ -12,7 +12,7 @@ const MessageController = {
     const createdMessage = MessageModel.createNewMessage(req.body);
     return res.status(201).json({
       status: res.statusCode,
-      message: 'Message sent successfully',
+      message: 'Message created successfully',
       createdMessage
     });
   },
@@ -63,27 +63,16 @@ const MessageController = {
   },
 
   deleteSpecificMessage(req, res) {
-    const deletem = MessageModel.deleteOneMessage(req.params.id);
-    console.log(deletem);
-    return res.send(deletem);
+    const message = MessageModel.fetchSpecificMessage(req.params.id);
+    if (!message) {
+      res.status(404).json({ message: 'Message is not found' });
+    }
+    const deletedmessage = MessageModel.deleteOneMessage(req.params.id);
+    res.status(204).json({
+      status: res.statusCode,
+      deletedmessage
+    });
   }
-
-
-
-  // deleteSpecificMessage(req, res) {
-  //   const deletedMessage = MessageModel.deleteOneMessage(Number(req.params.id));
-  //   // const deleteMessage = MessageModel.deleteOneMessage(req.params.id);
-  //   if (deletedMessage) {
-  //   return res.status(204).json({
-  //     status: res.statusCode,
-  //     message: 'Message is successfully Deleted',
-  //     deletedMessage
-  //   });
-  // }
-  // console.log(deletedMessage);
-  //   return res.status(404).json({ message: 'message not found in delete router' });
-  // }
-  
 };
 
 export default MessageController;

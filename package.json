@@ -6,6 +6,7 @@
   "scripts": {
     "test": "nyc mocha --require @babel/register --require @babel/polyfill server/test --exit",
     "start": "node build/server.js",
+    "dev-start": "nodemon --exec babel-node server/server.js",
     "build": "babel server --out-dir build",
     "lint": "./node_modules/.bin/eslint server/test/*.js",
     "coverage": "nyc --reporter=lcov --reporter=html --reporter=text mocha --require @babel/register server/test/*.js --exit",
