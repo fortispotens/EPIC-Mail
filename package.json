@@ -4,11 +4,11 @@
   "description": "Node.js server for EPIC-Mail",
   "main": "server.js",
   "scripts": {
-    "test": "nyc mocha --timeout 10000 --require @babel/register --require @babel/polyfill server/test --exit || true",
+    "test": "nyc mocha --require @babel/register --require @babel/polyfill server/test --exit",
     "start": "nodemon --exec babel-node server/server.js",
     "lint": "./node_modules/.bin/eslint server/test/*.js",
-    "coverage": "nyc --reporter=lcov --reporter=html --reporter=text mocha --require @babel/register server/test/*.js --exit || true",
-    "coveralls": "nyc mocha --require @babel/register server/test/*.js --exit || true"
+    "coverage": "nyc --reporter=lcov --reporter=html --reporter=text mocha --require @babel/register server/test/*.js --exit",
+    "coveralls": "nyc mocha --require @babel/register server/test/*.js --exit"
   },
   "repository": {
     "type": "git",
@@ -42,13 +42,11 @@
     "@babel/core": "^7.3.4",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.3.4",
-    "babel-plugin-istanbul": "^5.1.1",
     "coveralls": "^3.0.3",
     "cross-env": "^5.2.0",
     "eslint": "^5.15.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
-    "istanbul": "^0.4.5",
     "mocha-lcov-reporter": "^1.3.0",
     "nodemon": "^1.18.10",
     "nyc": "^13.3.0"
