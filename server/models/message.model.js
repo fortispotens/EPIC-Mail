@@ -34,6 +34,13 @@ class Message {
   fetchSentMessage(sent) {
     return this.messages.filter(message => message.status === 'sent');
   }
+
+  deleteOneMessage(id) {
+    const message = this.messages.find(message => message.id === id);
+    const index = this.messages.indexOf(message);
+    const deletedMessage = this.messages.splice(index, 1);
+    return deletedMessage;
+  }
 }
 
 export default new Message();

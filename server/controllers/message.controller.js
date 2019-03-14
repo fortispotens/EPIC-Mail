@@ -60,7 +60,30 @@ const MessageController = {
       message: 'Fetched all sent Messages successfully',
       sentMessage
     });
+  },
+
+  deleteSpecificMessage(req, res) {
+    const deletem = MessageModel.deleteOneMessage(req.params.id);
+    console.log(deletem);
+    return res.send(deletem);
   }
+
+
+
+  // deleteSpecificMessage(req, res) {
+  //   const deletedMessage = MessageModel.deleteOneMessage(Number(req.params.id));
+  //   // const deleteMessage = MessageModel.deleteOneMessage(req.params.id);
+  //   if (deletedMessage) {
+  //   return res.status(204).json({
+  //     status: res.statusCode,
+  //     message: 'Message is successfully Deleted',
+  //     deletedMessage
+  //   });
+  // }
+  // console.log(deletedMessage);
+  //   return res.status(404).json({ message: 'message not found in delete router' });
+  // }
+  
 };
 
 export default MessageController;
