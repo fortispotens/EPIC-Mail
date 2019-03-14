@@ -37,6 +37,17 @@ const MessageController = {
       message: 'Fetched Message successfully',
       specificMessage
     });
+  },
+  getUnreadMessage(req, res) {
+    const unreadMessage = MessageModel.fetchUnreadMessage(req.body.status);
+    if (unreadMessage.length === 0) {
+      return res.status(404).json({ message: 'Sorry, there are no unread messages' });
+    }
+    return res.json({
+      status: res.statusCode,
+      message: 'Fetched all unread Messages successfully',
+      unreadMessage
+    });
   }
 };
 

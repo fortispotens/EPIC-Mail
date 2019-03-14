@@ -26,6 +26,10 @@ class Message {
   fetchSpecificMessage(id) {
     return this.messages.find(message => message.id === id);
   }
+
+  fetchUnreadMessage() {
+    return this.messages.filter(message => message.status === 'unread');
+  }
 }
 
 export default new Message();
