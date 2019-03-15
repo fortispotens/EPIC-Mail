@@ -1,3 +1,6 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=68a9726124772f3a9a48914095bba48520b412500e38131ed67abddcb618ef1f
 
 language: node_js
 node_js:
@@ -12,7 +15,7 @@ script:
   - npm install
 
 after_script:
-- ./cc-test-reporter after-build -p --exit-code $TRAVIS_TEST_RESULT
+- ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 after_success:
   - npm run coverage
