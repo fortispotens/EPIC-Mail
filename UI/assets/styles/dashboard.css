@@ -10,10 +10,17 @@
   padding: 0 1rem;
 }
 
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .dashboard-links {
   display: flex;
   flex-wrap: wrap;
   margin-top: 2rem;
+  justify-content: center;
 }
 
 .links {
@@ -35,4 +42,30 @@
   width: 40vw;
   margin: 2rem 0;
   padding: 0.4rem;
+}
+
+table {
+  max-width: 52vw;
+}
+
+
+
+
+@media all and (max-width:550px) and (min-width:0px) {
+
+  h1 {
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.4em;
+  }
+
+  table {
+    max-width: 80vw;
+  }
+
+  .dashboard-items {
+    margin-left: 15px;
+  }
+
 }
