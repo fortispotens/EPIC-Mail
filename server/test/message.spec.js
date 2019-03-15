@@ -2,8 +2,6 @@ import chai from 'chai';
 import { expect } from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../app';
-import MessageController from '../controllers/message.controller';
-import MessageModel from '../models/message.model';
 
 process.env.NODE_ENV = 'test';
 
@@ -75,6 +73,7 @@ describe('Messages', () => {
         .get('api/v1/messages/:id')
         .send(newMessage)
         .end((err, res) => {
+          expect(newMessage).to.be.a('object');
           expect(newMessage).to.have.property('id').to.deep.equal(1);
           expect(newMessage).to.have.property('status').eql('unread');
           expect(newMessage).to.have.property('subject').eql('Developer');
@@ -99,8 +98,8 @@ describe('Messages', () => {
           status: 'unread'
         })
         .end((err, res) => {
-          expect(newMessage).to.have.property('id').to.deep.equal(1);
           expect(newMessage).to.be.a('object');
+          expect(newMessage).to.have.property('id').to.deep.equal(1);
           expect(newMessage).to.have.property('status').eql('unread');
           expect(newMessage).to.have.property('subject').eql('Developer');
           expect(newMessage).to.have.property('createdOn').to.deep.equal('Fri Mar 15 2019 19:02:50 GMT+0100 (WAT)');
@@ -124,8 +123,8 @@ describe('Messages', () => {
           status: 'sent',
         })
         .end((err, res) => {
-          expect(newMessage).to.have.property('id').to.deep.equal(1);
           expect(newMessage).to.be.a('object');
+          expect(newMessage).to.have.property('id').to.deep.equal(1);
           expect(newMessage).to.have.property('status').eql('sent');
           expect(newMessage).to.have.property('subject').eql('Developer');
           expect(newMessage).to.have.property('createdOn').to.deep.equal('Fri Mar 15 2019 19:02:50 GMT+0100 (WAT)');
