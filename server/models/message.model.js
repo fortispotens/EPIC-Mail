@@ -8,7 +8,7 @@ class Message {
 
   createNewMessage(data) {
     const newMessage = {
-      id: uuid.v4(),
+      id: this.messages.length + 1,
       createdOn: new Date().toString(),
       subject: data.subject,
       message: data.message,
