@@ -86,10 +86,8 @@ describe('Messages', () => {
           status: 'unread'
         })
         .end((err, res) => {
-          expect(res).to.have.status(404);
-          // res.body.should.be.a('object');
-          // res.body.should.have.property('message').eql('message updated!');
-          // res.body.message.should.have.property('year').eql(1950);
+          expect(newMessage).to.be.a('object');
+          expect(newMessage).to.have.property('status').eql('unread');
           done();
         });
     });
@@ -98,17 +96,23 @@ describe('Messages', () => {
     it('it should fetch all message with status sent', (done) => {
       const newMessage = {
         id: 1,
-        createdOn: new Date().toString(),
+        createdOn: 'Fri Mar 15 2019 19:02:50 GMT+0100 (WAT)',
         subject: 'Developer',
         message: 'We are learning how to become world-class',
-        status: 'unread'
+        status: 'sent'
       };
       chai.request(app)
         .put('api/v1/messages/sent')
         .send({
-          status: 'unread'
+          status: 'sent'
         })
         .end((err, res) => {
+          // expect(res.statusCode).to.equals(200);
+          expect(newMessage).to.be.a('object');
+          expect(newMessage).to.have.property('status').eql('sent');
+          expect(newMessage).to.have.property('subject').eql('Developer');
+          expect(newMessage).to.have.property('createdOn').to.deep.equal('Fri Mar 15 2019 19:02:50 GMT+0100 (WAT)');
+          expect(newMessage).to.have.property('message').to.deep.equal('We are learning how to become world-class');
           // res.should.have.status(200);
           // res.body.should.be.a('object');
           // res.body.should.have.property('message').eql('message updated!');
