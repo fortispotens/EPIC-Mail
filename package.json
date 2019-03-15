@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "nyc mocha --require @babel/register --require @babel/polyfill server/test --exit",
+    "test-watch": "nyc mocha --require @babel/register --require @babel/polyfill -w server/test --exit",
     "start": "node build/server.js",
     "dev-start": "nodemon --exec babel-node server/server.js",
     "build": "babel server --out-dir build",
@@ -44,6 +45,7 @@
     "@babel/core": "^7.3.4",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.3.4",
+    "babel-plugin-istanbul": "^5.1.1",
     "coveralls": "^3.0.3",
     "cross-env": "^5.2.0",
     "eslint": "^5.15.1",
