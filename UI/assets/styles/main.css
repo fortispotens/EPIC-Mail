@@ -49,6 +49,7 @@ body {
   color: #fff;
   list-style-type: none;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .header ul li:hover {
@@ -80,14 +81,18 @@ body {
   font-size: 1.75rem;
 }
 
-button {
-  background: #22026b;
-  color: white;
+.send-a-mail {
+  width: 50%;
+  background: #ffffff;
+  color: #22026b;
   border: none;
   border-radius: 10px;
+  margin-top: 2%;
   padding: 20px 50px;
-  font-size: 30px;
+  font-size: 1rem;
   cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .text-btn {
@@ -101,10 +106,15 @@ button {
   padding: 5px 15px;
 }
 
+section {
+margin: 0 auto;
+}
+
+
 .footer {
   background: linear-gradient(to right, #22026b, #280c50);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 0 2rem;
   color: rgb(24, 20, 32);
@@ -115,30 +125,33 @@ button {
   color: #fff;
 }
 
-.footer ul {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.footer ul li a {
-  display: inline-block;
-  padding: 20px;
-  display: inline-block;
-  padding: 20px;
-  color: #fff;
-  list-style-type: none;
-  text-decoration: none;
-}
-
-.footer ul li:hover {
-  background-color: #6a819c;
-}
-
 #main {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/epic-mail.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+#view, #retract, #delete {
+  width: 60px;
+  font-size: 0.75rem;
+  background-color: green;
+  color: #ffffff;
+  border: none;
+  margin: 0.3rem 0;
+  padding: 0.3rem 0.8rem;
+}
+
+#delete {
+  background-color: red;
+}
+
+table tr td, table tr th {
+  font-size: 0.75rem;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
 
 @media all and (max-width:550px) and (min-width:0px) {
   
@@ -173,8 +186,13 @@ button {
     line-height: 2.5rem;
   }
 
-  .call-to-action {
+  .send-a-mail {
+    width: 80%;
     font-size: 1em;
+  }
+
+  #reset-link {
+    line-height: 20px;
   }
   
 }
