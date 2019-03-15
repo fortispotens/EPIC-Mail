@@ -42,7 +42,7 @@ textarea::placeholder {
 }
 
 table {
-  width: 80vw;
+  min-width: 52vw;
   border: 1px solid #efefef;
   border-left: none;
   border-right: none;
@@ -68,19 +68,23 @@ tbody, td, tr:nth-child(odd) {
 
 @media all and (max-width:550px) and (min-width:0px) {
   
+  table {
+    min-width: 80vw;
+  }
+
   .create-group {
     justify-content: center;
   }
   .create-group input[type='text'] {
-    width: 80vw;
+    min-width: 80vw;
     margin-bottom: 0.4rem;
   }
   
   .create-group input[type='button'] {
-    width: 80vw;
+    min-width: 80vw;
   }
   textarea {
-    width: 80vw;;
+    min-width: 80vw;;
   }
 
 }

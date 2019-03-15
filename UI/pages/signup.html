@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>EPIC-Mail</title>
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
-	<link rel="stylesheet" media="screen" href="../assets/styles/reset.css">
-	<link rel="stylesheet" media="screen" href="../assets/styles/main.css">
-	<link rel="stylesheet" media="screen" href="../assets/styles/signup.css">
+	<link rel="stylesheet" href="../assets/styles/reset.css">
+	<link rel="stylesheet" href="../assets/styles/main.css">
+	<link rel="stylesheet" href="../assets/styles/signup.css">
 </head>
 <body>
 	<header class="header">
@@ -16,7 +16,6 @@
 		<nav>
 			<ul>
 				<li><a href="../index.html">Home</a></li>
-				<li><a href="#">About</a></li>
 				<li><a href="../pages/signin.html">Sign in</a></li>
 			</ul>
 		</nav>
@@ -29,24 +28,18 @@
                 <h3 id="register">Sign up</h3>
                 <input type="email" placeholder="Email" required id="email">
                 <input type="text" placeholder="Username" required id="username">
-                <input type="text" placeholder="Firstname" required id="firstname">
-                <input type="text" placeholder="Lastname" required id="lastname">
+                <input type="text" placeholder="First name" required id="firstname">
+                <input type="text" placeholder="Last name" required id="lastname">
                 <input type="password" placeholder="Password" required id="password">
                 <button type="submit" id="signup-btn">Sign up</button>
-                <p id="login-message" >Already have an account? &nbsp;<a href="../pages/signin.html" class="text-btn"> Sign in</a></p>
+                <p id="login-message" >Already have an account? <span class="signup-signin-link"><a href="../pages/signin.html">Sign in</a></span></p>
               </form>
             </div>
       </div>
   </section>
 	</main>
 	<footer class="footer">
-		<div><p>&copy; Tobechukwu Obitube - 2019</p></div>
-			<nav>
-				<ul>
-					<li><a href="#">Contact</a></li>
-					<li><a href="#">FAQs</a></li>
-				</ul>
-			</nav>
+		<p>&copy; Tobechukwu Obitube - 2019</p>
 	</footer> 
 </body>
 </html>

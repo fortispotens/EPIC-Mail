@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/riseagain47/EPIC-Mail.svg?branch=develop)](https://travis-ci.org/riseagain47/EPIC-Mail)
+[![Coverage Status](https://coveralls.io/repos/github/riseagain47/EPIC-Mail/badge.svg)](https://coveralls.io/github/riseagain47/EPIC-Mail)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/c435620777c2a71ab730/test_coverage)](https://codeclimate.com/github/riseagain47/EPIC-Mail/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/c435620777c2a71ab730/maintainability)](https://codeclimate.com/github/riseagain47/EPIC-Mail/maintainability)
+
 ## EPIC Mail
 
 This web application will help people exchange

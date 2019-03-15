@@ -59,3 +59,12 @@ typings/
 
 # next.js build output
 .next
+
+# coveralls.yml
+.coveralls.yml
+
+# travis.yml
+.travis.yml
+
+# ES5 build folder
+build/

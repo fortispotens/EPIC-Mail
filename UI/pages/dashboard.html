@@ -9,6 +9,7 @@
 	<link rel="stylesheet" media="screen" href="../assets/styles/main.css">
 	<link rel="stylesheet" media="screen" href="../assets/styles/signup.css">
   <link rel="stylesheet" media="screen" href="../assets/styles/dashboard.css">
+  <link rel="stylesheet" media="screen" href="../assets/styles/creategroup.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
 </head>
 <body>
@@ -17,8 +18,7 @@
 		<nav>
 			<ul>
 				<li><a href="../index.html">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="../index.html">Log out</a></li>
+				<li><a href="../pages/signin.html">Log out</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -26,7 +26,7 @@
 		<section> 
         <div class="wrapper">
           <div class="dashboard-greeting">
-            <h1>Welcome</h1>
+            <h1>Welcome, here are your new messages.</h1>
           </div>
           <div class="dashboard-links">
             <div class="links">
@@ -44,18 +44,43 @@
 						<div class="links">
 							<a href="draft.html">Draft</a>
 						</div>
+					</div>
+					<div class="dashboard-items">
+						<div class="groups">
+							<table>
+								<thead>
+									<tr>
+										<th>From</th>
+										<th>Message</th>
+										<th>Action</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Tobechukwu</td>
+										<td>I am coming from School</td>
+										<td><input id="view" type="button" value="View"></td>
+									</tr>
+									<tr>
+										<td>Tobechukwu</td>
+										<td>I am coming from School</td>
+										<td><input id="view" type="button" value="View"></td>
+									</tr>
+									<tr>
+										<td>Tobechukwu</td>
+										<td>I am coming from School</td>
+										<td><input id="view" type="button" value="View"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
           </div>
-        </div>
+				
     </section>
 	</main>
 	<footer class="footer">
-		<div><p>&copy; Tobechukwu Obitube - 2019</p></div>
-			<nav>
-				<ul>
-					<li><a href="#">Contact</a></li>
-					<li><a href="#">FAQs</a></li>
-				</ul>
-			</nav>
+		<p>&copy; Tobechukwu Obitube - 2019</p>
 	</footer> 
 </body>
 </html>
