@@ -6,25 +6,25 @@ class User {
     this.users = [];
   }
 
-  userSignup(data) {
+  signup(data) {
     const newUser = {
       id: this.users.length + 1,
       email: data.email,
-      firstName: data.firstname,
-      lastName: data.lastname,
+      firstName: data.firstName,
+      lastName: data.lastName,
       password: data.password
     };
     this.users.push(newUser);
     return newUser;
   }
 
-  userLogin(data) {
+  login(data) {
     const existingUser = {
       id: this.users.length + 1,
       email: data.email,
       password: data.password
     };
-    this.users.push(newUser);
+    this.users.push(existingUser);
     return existingUser;
   }
 }

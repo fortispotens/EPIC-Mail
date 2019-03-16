@@ -27,11 +27,11 @@ class Message {
     return this.messages.find(message => message.id === id);
   }
 
-  fetchUnreadMessage() {
+  fetchUnreadMessages() {
     return this.messages.filter(message => message.status === 'unread');
   }
 
-  fetchSentMessage(sent) {
+  fetchSentMessages(sent) {
     return this.messages.filter(message => message.status === 'sent');
   }
 
