@@ -13,7 +13,7 @@ class Message {
       subject: data.subject,
       message: data.message,
       parentMessageId: data.parentMessageId,
-      status: 'unread'
+      status: data.status
     };
     this.messages.push(newMessage);
     return newMessage;
