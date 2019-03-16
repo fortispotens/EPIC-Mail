@@ -39,8 +39,7 @@ const MessageController = {
     });
   },
   getUnreadMessages(req, res) {
-    const unreadMessage = MessageModel.fetchUnreadMessages(req.body.status)
-          || MessageModel.fetchAllMessages(req.body.status === 'unread');
+    const unreadMessage = MessageModel.fetchUnreadMessages(req.body.status === 'unread')
     if (unreadMessage.length === 0) {
       return res.status(404).json({ message: 'Sorry, there are no unread messages' });
     }
@@ -51,8 +50,7 @@ const MessageController = {
     });
   },
   getSentMessages(req, res) {
-    const sentMessage = MessageModel.fetchSentMessages(req.body.status)
-          || MessageModel.fetchAllMessages(req.body.status === 'sent');
+    const sentMessage = MessageModel.fetchSentMessages(req.body.status === 'sent')
     if (sentMessage.length === 0) {
       return res.status(404).json({ message: 'Sorry, there are no sent messages' });
     }
