@@ -13,6 +13,6 @@ app.use(bodyParser.json());
 app.get('/api/v1', (req, res) => res.status(200).send({ message: 'Server is working' }));
 
 app.use('/api/v1/messages/', messageRoutes);
-app.use('/api/v1/auth', UserRoutes);
+app.use('/api/v1/auth/', UserRoutes);
 
 export default app;
