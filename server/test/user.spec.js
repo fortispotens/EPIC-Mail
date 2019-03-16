@@ -12,7 +12,6 @@ const request = chai.request(app);
 const newUser = UserModel.signup('newUser');
 const existingUser = UserModel.login('existingUser');
 
-
 const users = [
   {
     id: 1,
@@ -22,7 +21,6 @@ const users = [
     password: '123'
   }
 ];
-
 
 describe('Users', () => {
   beforeEach((done) => {
