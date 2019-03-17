@@ -41,6 +41,7 @@ describe('Users', () => {
       chai.request(app)
         .post('api/v1/auth/users')
         .end((err, res) => {
+          expect(users).to.be.a('array');
           expect(newUser).to.be.a('object');
           expect(signupInfo).to.be.a('object');
           expect(signupInfo).to.have.property('id').to.deep.equal(1);
@@ -62,6 +63,7 @@ describe('Users', () => {
       chai.request(app)
         .post('api/v1/auth/users')
         .end((err, res) => {
+          expect(users).to.be.a('array');
           expect(existingUser).to.be.a('object');
           expect(loginInfo).to.be.a('object');
           expect(loginInfo).to.have.property('id').to.deep.equal(1);
