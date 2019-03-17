@@ -18,14 +18,14 @@ class MessageController {
   }
 
   static getAllMessages(req, res) {
-    const allMessages = MessageModel.fetchAllMessages();
-    if (allMessages.length === 0) {
+    const messages = MessageModel.fetchAllMessages();
+    if (!messages) {
       return res.status(400).json({ message: 'There are no messages' });
     }
     return res.status(200).json({
       status: res.statusCode,
       message: 'Fetched All Messages successfully',
-      allMessages
+      messages
     });
   }
 
