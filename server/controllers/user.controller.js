@@ -1,8 +1,8 @@
 import UserModel from '../models/user.model';
 
 
-const UserController = {
-  userSignup(req, res) {
+class UserController {
+  static userSignup(req, res) {
     if (!req.body.email || !req.body.firstName || !req.body.lastName || !req.body.password) {
       return res.status(400).json({ message: 'All fields are required' });
     }
@@ -12,8 +12,9 @@ const UserController = {
       message: 'Account created successfully',
       signUpData
     });
-  },
-  userLogin(req, res) {
+  }
+
+  static userLogin(req, res) {
     if (!req.body.email || !req.body.password) {
       return res.status(400).json({ message: 'Enter your Email or Password' });
     }
@@ -24,6 +25,6 @@ const UserController = {
       loginData
     });
   }
-};
+}
 
 export default UserController;

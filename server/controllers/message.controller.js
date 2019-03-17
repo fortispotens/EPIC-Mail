@@ -1,8 +1,8 @@
 import MessageModel from '../models/message.model';
 
 
-const MessageController = {
-  sendNewMessage(req, res) {
+class MessageController {
+  static sendNewMessage(req, res) {
     if (!req.body.subject) {
       return res.status(400).json({ message: 'Please provide a subject' });
     }
@@ -15,8 +15,9 @@ const MessageController = {
       message: 'Message created successfully',
       createdMessage
     });
-  },
-  getAllMessages(req, res) {
+  }
+
+  static getAllMessages(req, res) {
     const allMessages = MessageModel.fetchAllMessages();
     if (allMessages.length === 0) {
       return res.status(400).json({ message: 'There are no messages' });
@@ -26,8 +27,9 @@ const MessageController = {
       message: 'Fetched All Messages successfully',
       allMessages
     });
-  },
-  getSpecificMessage(req, res) {
+  }
+
+  static getSpecificMessage(req, res) {
     const specificMessage = MessageModel.fetchSpecificMessage(Number(req.params.id));
     if (!specificMessage) {
       return res.status(404).json({ message: 'Sorry, message not found' });
@@ -37,9 +39,10 @@ const MessageController = {
       message: 'Fetched Message successfully',
       specificMessage
     });
-  },
-  getUnreadMessages(req, res) {
-    const unreadMessage = MessageModel.fetchUnreadMessages(req.body.status === 'unread')
+  }
+
+  static getUnreadMessages(req, res) {
+    const unreadMessage = MessageModel.fetchUnreadMessages();
     if (unreadMessage.length === 0) {
       return res.status(404).json({ message: 'Sorry, there are no unread messages' });
     }
@@ -48,9 +51,10 @@ const MessageController = {
       message: 'Fetched all unread Messages successfully',
       unreadMessage
     });
-  },
-  getSentMessages(req, res) {
-    const sentMessage = MessageModel.fetchSentMessages(req.body.status === 'sent')
+  }
+
+  static getSentMessages(req, res) {
+    const sentMessage = MessageModel.fetchSentMessages();
     if (sentMessage.length === 0) {
       return res.status(404).json({ message: 'Sorry, there are no sent messages' });
     }
@@ -59,9 +63,9 @@ const MessageController = {
       message: 'Fetched all sent Messages successfully',
       sentMessage
     });
-  },
+  }
 
-  deleteSpecificMessage(req, res) {
+  static deleteSpecificMessage(req, res) {
     const message = MessageModel.fetchSpecificMessage(req.params.id);
     if (!message) {
       res.status(404).json({ message: 'Message is not found' });
@@ -72,6 +76,6 @@ const MessageController = {
       deletedmessage
     });
   }
-};
+}
 
 export default MessageController;

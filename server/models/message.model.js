@@ -12,7 +12,7 @@ class Message {
       createdOn: new Date().toString(),
       subject: data.subject,
       message: data.message,
-      parentMessageId: data.parentMessageId,
+      parentMessageId: this.messages.length + 1,
       status: data.status
     };
     this.messages.push(newMessage);
