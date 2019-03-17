@@ -66,14 +66,14 @@ class MessageController {
   }
 
   static deleteSpecificMessage(req, res) {
-    const message = MessageModel.fetchSpecificMessage(req.params.id);
+    const message = MessageModel.fetchSpecificMessage(Number(req.params.id));
     if (!message) {
       res.status(404).json({ message: 'Message is not found' });
     }
-    const deletedmessage = MessageModel.deleteOneMessage(req.params.id);
-    res.status(204).json({
+    MessageModel.deleteOneMessage(Number(req.params.id));
+    res.status(204).send({
       status: res.statusCode,
-      deletedmessage
+      message: 'Message successfully deleted'
     });
   }
 }
