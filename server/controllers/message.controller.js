@@ -42,26 +42,26 @@ class MessageController {
   }
 
   static getUnreadMessages(req, res) {
-    const unreadMessage = MessageModel.fetchUnreadMessages();
-    if (unreadMessage.length === 0) {
-      return res.status(404).json({ message: 'Sorry, there are no unread messages' });
+    const unreadMessages = MessageModel.fetchUnreadMessages(req.params.status === 'unread');
+    if (unreadMessages.length === 0) {
+      return res.status(404).json({ message: 'Sorry, no unread messages' });
     }
     return res.json({
       status: res.statusCode,
       message: 'Fetched all unread Messages successfully',
-      unreadMessage
+      unreadMessages
     });
   }
 
   static getSentMessages(req, res) {
-    const sentMessage = MessageModel.fetchSentMessages();
-    if (sentMessage.length === 0) {
+    const sentMessages = MessageModel.fetchSentMessages();
+    if (sentMessages.length === 0) {
       return res.status(404).json({ message: 'Sorry, there are no sent messages' });
     }
     return res.json({
       status: res.statusCode,
       message: 'Fetched all sent Messages successfully',
-      sentMessage
+      sentMessages
     });
   }
 
