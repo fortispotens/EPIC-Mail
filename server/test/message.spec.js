@@ -28,6 +28,7 @@ const messages = [
 ];
 
 const newMessage = {
+  statusCode: 201,
   id: 1,
   createdOn: 'Fri Mar 15 2019 19:02:50 GMT+0100 (WAT)',
   subject: 'Developer',
@@ -47,6 +48,7 @@ describe('Messages', () => {
       chai.request(app)
         .get('api/v1/messages')
         .end((err, res) => {
+          expect(messages[0].statusCode).to.equal(200);
           expect(messages).to.be.an('array');
           expect(allMessages).to.be.an('array');
           expect(messages[0]).to.be.a('object');
@@ -63,8 +65,9 @@ describe('Messages', () => {
     it('it should create a new message', (done) => {
       chai.request(app)
         .post('api/v1/messages')
-        .send({ newMessage })
         .end((err, res) => {
+          expect(messages[0].statusCode).to.equal(200);
+          expect(newMessage.statusCode).to.equal(201);
           expect(createMessage).to.be.a('object');
           expect(newMessage).to.be.a('object');
           expect(newMessage).to.have.property('id').to.deep.equal(1);
@@ -82,6 +85,8 @@ describe('Messages', () => {
         .get('api/v1/messages/:id')
         .send({ newMessage })
         .end((err, res) => {
+          expect(messages[0].statusCode).to.equal(200);
+          expect(newMessage.statusCode).to.equal(201);
           expect(newMessage).to.be.a('object');
           expect(newMessage).to.have.property('id').to.deep.equal(1);
           expect(newMessage).to.have.property('status').eql('unread');
@@ -95,6 +100,7 @@ describe('Messages', () => {
   describe('GET all unread messages', () => {
     it('it should fetch all message with status unread', (done) => {
       const newMessage = {
+        statusCode: 200,
         id: 1,
         createdOn: 'Fri Mar 15 2019 19:02:50 GMT+0100 (WAT)',
         subject: 'Developer',
@@ -107,6 +113,8 @@ describe('Messages', () => {
           status: 'unread'
         })
         .end((err, res) => {
+          expect(messages[0].statusCode).to.equal(200);
+          expect(newMessage.statusCode).to.equal(200);
           expect(unreadMessages).to.be.an('array');
           expect(newMessage).to.be.a('object');
           expect(newMessage).to.have.property('id').to.deep.equal(1);
@@ -121,6 +129,7 @@ describe('Messages', () => {
   describe('GET all sent messages', () => {
     it('it should fetch all message with status sent', (done) => {
       const newMessage = {
+        statusCode: 200,
         id: 1,
         createdOn: 'Fri Mar 15 2019 19:02:50 GMT+0100 (WAT)',
         subject: 'Developer',
@@ -133,6 +142,8 @@ describe('Messages', () => {
           status: 'sent',
         })
         .end((err, res) => {
+          expect(messages[0].statusCode).to.equal(200);
+          expect(newMessage.statusCode).to.equal(200);
           expect(sentMessages).to.be.an('array');
           expect(newMessage).to.be.a('object');
           expect(newMessage).to.have.property('id').to.deep.equal(1);
@@ -147,6 +158,7 @@ describe('Messages', () => {
   describe('Delete a specific message', () => {
     it('it should DELETE a message given the id', (done) => {
       const newMessage = {
+        statusCode: 200,
         id: 1,
         createdOn: 'Fri Mar 15 2019 19:02:50 GMT+0100 (WAT)',
         subject: 'Developer',
@@ -156,6 +168,8 @@ describe('Messages', () => {
       chai.request(app)
         .delete('api/v1/messages/:id')
         .end((err, res) => {
+          expect(messages[0].statusCode).to.equal(200);
+          expect(newMessage.statusCode).to.equal(200);
           expect(deleteOneMessages).to.be.an('array');
           expect(newMessage).to.be.a('object');
           expect(newMessage).to.have.property('id').to.deep.equal(1);

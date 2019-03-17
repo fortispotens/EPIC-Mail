@@ -46,7 +46,7 @@ class MessageController {
     if (unreadMessages.length === 0) {
       return res.status(404).json({ message: 'Sorry, no unread messages' });
     }
-    return res.json({
+    return res.status(200).json({
       status: res.statusCode,
       message: 'Fetched all unread Messages successfully',
       unreadMessages
@@ -58,7 +58,7 @@ class MessageController {
     if (sentMessages.length === 0) {
       return res.status(404).json({ message: 'Sorry, there are no sent messages' });
     }
-    return res.json({
+    return res.status(200).json({
       status: res.statusCode,
       message: 'Fetched all sent Messages successfully',
       sentMessages
