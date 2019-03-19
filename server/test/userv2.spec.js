@@ -39,7 +39,7 @@ describe('Users', () => {
         password: '123'
       };
       chai.request(app)
-        .post('api/v1/auth/signup')
+        .post('api/v2/auth/signup')
         .end((err, res) => {
           expect(users).to.be.a('array');
           expect(newUser).to.be.a('object');
@@ -61,7 +61,7 @@ describe('Users', () => {
         password: '123'
       };
       chai.request(app)
-        .post('api/v1/auth/login')
+        .post('api/v2/auth/login')
         .end((err, res) => {
           expect(users).to.be.a('array');
           expect(existingUser).to.be.a('object');
