@@ -13,6 +13,18 @@ class GroupController {
       createdGroup
     });
   }
+
+  static fetchAllGroups(req, res) {
+    const groups = GroupModel.allGroups();
+    if (groups.length === 0 || !groups) {
+      return res.status(400).send({ message: 'There are no groups' });
+    }
+    return res.status(200).send({
+      status: res.statusCode,
+      message: 'Fetched All groups successfully',
+      groups
+    });
+  }
 }
 
 export default GroupController;

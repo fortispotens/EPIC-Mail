@@ -15,6 +15,10 @@ class Group {
     this.groups.push(group);
     return group;
   }
+
+  allGroups() {
+    return this.groups;
+  }
 }
 
 export default new Group();
