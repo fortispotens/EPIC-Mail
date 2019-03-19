@@ -9,7 +9,7 @@ class GroupController {
     const createdGroup = GroupModel.newGroup(req.body);
     return res.status(201).send({
       status: res.statusCode,
-      message: 'Message created successfully',
+      message: 'Group created successfully',
       createdGroup
     });
   }
