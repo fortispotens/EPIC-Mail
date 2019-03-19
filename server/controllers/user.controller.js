@@ -19,7 +19,7 @@ class UserController {
       return res.status(400).json({ message: 'Enter your Email or Password' });
     }
     const loginInfo = UserModel.login(req.body);
-    return res.status(201).json({
+    return res.status(200).json({
       status: res.statusCode,
       message: 'Login was successful',
       loginInfo
