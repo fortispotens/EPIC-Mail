@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../app';
 
-import MessageModel from '../v1/models/message.model';
+import MessageModel from '../v2/models/message.model';
 
 
 chai.use(chaiHttp);
@@ -46,7 +46,7 @@ describe('Messages', () => {
   describe('Get All Messages', () => {
     it('it should GET all the messages', (done) => {
       chai.request(app)
-        .get('api/v1/messages')
+        .get('api/v2/messages')
         .end((err, res) => {
           expect(messages[0].statusCode).to.equal(200);
           expect(messages).to.be.an('array');
@@ -64,7 +64,7 @@ describe('Messages', () => {
   describe('Create a message', () => {
     it('it should create a new message', (done) => {
       chai.request(app)
-        .post('api/v1/messages')
+        .post('api/v2/messages')
         .end((err, res) => {
           expect(messages[0].statusCode).to.equal(200);
           expect(newMessage.statusCode).to.equal(201);
@@ -82,7 +82,7 @@ describe('Messages', () => {
   describe('Get a specific message', () => {
     it('it should GET a message by the given id', (done) => {
       chai.request(app)
-        .get('api/v1/messages/:id')
+        .get('api/v2/messages/:id')
         .send({ newMessage })
         .end((err, res) => {
           expect(messages[0].statusCode).to.equal(200);
@@ -108,7 +108,7 @@ describe('Messages', () => {
         status: 'unread'
       };
       chai.request(app)
-        .put('api/v1/messages/unread')
+        .put('api/v2/messages/unread')
         .send({
           status: 'unread'
         })
@@ -137,7 +137,7 @@ describe('Messages', () => {
         status: 'sent'
       };
       chai.request(app)
-        .put('api/v1/messages/sent')
+        .put('api/v2/messages/sent')
         .send({
           status: 'sent',
         })
@@ -166,7 +166,7 @@ describe('Messages', () => {
         status: 'sent'
       };
       chai.request(app)
-        .delete('api/v1/messages/:id')
+        .delete('api/v2/messages/:id')
         .end((err, res) => {
           expect(messages[0].statusCode).to.equal(200);
           expect(newMessage.statusCode).to.equal(200);
