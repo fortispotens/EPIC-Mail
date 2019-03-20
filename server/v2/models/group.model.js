@@ -19,6 +19,11 @@ class Group {
   allGroups() {
     return this.groups;
   }
+
+  oneGroup(id) {
+    return this.groups.find(group => group.id === id);
+  }
+
 }
 
 export default new Group();
