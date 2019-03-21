@@ -26,14 +26,16 @@ class MessageController {
   }
 
   static getAllMessages(req, res) {
-    const messages = MessageModel.fetchAllMessages();
-    if (messages.length === 0 || !messages) {
-      return res.status(400).send({ message: 'There are no messages' });
-    }
-    return res.status(200).send({
-      status: res.statusCode,
-      message: 'Fetched All Messages successfully',
-      messages
+    const query = 'SELECT * FROM messages';
+    return connectDB.query(query)
+      .then((result) => {
+        if (result.rowCount === 0) {
+          res.status(400).send({ status: 400, error: 'There are no messages' });
+        }
+        return res.status(200).send({ message: 'Messages were successfully retrieved', data: result.rows });
+      })
+      .catch((error) => {
+        res.status(500).send({ status: 500, error: 'Error fetching all messages' });
     });
   }
 
