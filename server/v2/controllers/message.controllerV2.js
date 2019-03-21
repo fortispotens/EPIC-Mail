@@ -1,4 +1,4 @@
-import MessageModel from '../models/message.model';
+import MessageModel from '../models/message.modelV2';
 
 
 class MessageController {

@@ -100,10 +100,33 @@ describe('Groups', () => {
         .end((err, res) => {
           expect(groups[0].statusCode).to.equal(200);
           expect(groups).to.be.an('array');
+          expect(groups[0]).to.be.an('object');
           expect(group).to.be.a('object');
           expect(group).to.have.property('id').to.deep.equal(1);
           expect(group).to.have.property('name').eql('Group 5');
           expect(group).to.have.property('role').eql('Food Committee');
+          done();
+        });
+    });
+  });
+  describe('Create a Group User', () => {
+    it('it should create a new Group', (done) => {
+      const groupUser = {
+        userId: 2,
+        role: 'Food Committee'
+      }
+      chai.request(app)
+        .post('api/v2/groups/:id/user')
+        .end((err, res) => {
+          expect(groups[0].statusCode).to.equal(200);
+          expect(groups).to.be.an('array');
+          expect(createdGroup).to.be.a('object');
+          expect(group).to.be.a('object');
+          expect(groupUser).to.be.a('object');
+          expect(group).to.have.property('id').to.deep.equal(1);
+          expect(groupUser).to.have.property('userId').to.deep.equal(2);
+          expect(group).to.have.property('name').eql('Group 1');
+          expect(groupUser).to.have.property('role').eql('Food Committee');
           done();
         });
     });

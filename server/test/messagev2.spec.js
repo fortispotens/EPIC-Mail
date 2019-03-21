@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../app';
 
-import MessageModel from '../v2/models/message.model';
+import MessageModel from '../v2/models/message.modelV2';
 
 
 chai.use(chaiHttp);

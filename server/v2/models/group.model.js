@@ -4,6 +4,7 @@ import uuid from 'uuid';
 class Group {
   constructor() {
     this.groups = [];
+    this.groupUsers = [];
   }
 
   newGroup(data) {
@@ -28,6 +29,16 @@ class Group {
     const group = this.oneGroup(id);
     const groupIndex = this.groups.indexOf(group);
     return this.groups.splice(groupIndex, 1);
+  }
+
+  newGroupUser(groupUserData) {
+    const groupUser = {
+      id: this.groups.length + 1,
+      userId: this.groupUsers.length + 1,
+      role: groupUserData.role,
+    };
+    this.groupUsers.push(groupUser);
+    return groupUser;
   }
 }
 
