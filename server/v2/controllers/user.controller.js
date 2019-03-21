@@ -36,7 +36,7 @@ class UserController {
       password
     } = req.body;
 
-    const query = `SELECT * FROM users WHERE email='${email}' returning * `;
+    const query = `SELECT * FROM users WHERE email='${email}'`;
     return connectDB.query(query)
       .then((result) => {
         if (result.rowCount === 0) {
