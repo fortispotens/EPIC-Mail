@@ -17,7 +17,7 @@ class UserController {
     return connectDB.query(query)
       .then((result) => {
         if (result.rowCount >= 1) {
-          return res.status(200).send({ status: 200, message: 'User Account created successfully', userData: result.rows[0] });
+          return res.status(200).send({ status: 200, message: 'User Account created successfully', data: result.rows[0] });
         }
 
         return res.status(500).send({ staus: 500, message: 'The user could not be saved' });
@@ -36,19 +36,19 @@ class UserController {
       password
     } = req.body;
 
-    const query = `SELECT * FROM users WHERE email='${email}'`;
+    const query = `SELECT * FROM users WHERE email='${email}' returning * `;
     return connectDB.query(query)
       .then((result) => {
         if (result.rowCount === 0) {
-          res.status(400).json({ status: 400, error: 'Account does not exist' });
+          res.status(400).send({ status: 400, error: 'Account does not exist' });
         }
-        return res.status(200).json({ message: 'You are successfully logged in' });
+        return res.status(200).send({ message: 'You are successfully logged in', data: result.rows[0] });
       })
       .catch((error) => {
         if (`Key (email)!=(${email})` || `Key (password)!=(${password})`) {
           return res.status(400).send({ status: 'error', message: 'Invalid Email or Password' });
         }
-        res.status(500).json({ status: 500, error: 'Error logging in' });
+        res.status(500).send({ status: 500, error: 'Error logging in' });
       });
   }
 }
