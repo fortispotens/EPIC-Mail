@@ -2,6 +2,7 @@ import chai from 'chai';
 import { expect } from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../app';
+import dbMigration from '../db/db';
 
 import GroupModel from '../v2/models/group.model';
 import MessageModel from '../v2/models/message.model';
@@ -9,6 +10,8 @@ import MessageModel from '../v2/models/message.model';
 
 chai.use(chaiHttp);
 const request = chai.request(app);
+
+before(dbMigration);
 
 const createdGroup = GroupModel.newGroup('group');
 const allGroups = GroupModel.allGroups();
