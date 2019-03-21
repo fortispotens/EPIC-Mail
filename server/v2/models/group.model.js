@@ -24,6 +24,11 @@ class Group {
     return this.groups.find(group => group.id === id);
   }
 
+  deleteOneGroup(id) {
+    const group = this.oneGroup(id);
+    const groupIndex = this.groups.indexOf(group);
+    return this.groups.splice(groupIndex, 1);
+  }
 }
 
 export default new Group();
