@@ -5,9 +5,6 @@ import UserModel from '../models/user.model';
 
 class UserController {
   static userSignup(req, res) {
-    // if (!req.body.email || !req.body.firstame || !req.body.lastame || !req.body.password) {
-    //   return res.status(400).json({ message: 'All fields are required' });
-    // }
     const {
       email,
       firstname,
@@ -34,15 +31,25 @@ class UserController {
   }
 
   static userLogin(req, res) {
-    if (!req.body.email || !req.body.password) {
-      return res.status(400).json({ message: 'Enter your Email or Password' });
-    }
-    const loginInfo = UserModel.login(req.body);
-    return res.status(201).json({
-      status: res.statusCode,
-      message: 'Login was successful',
-      loginInfo
-    });
+    const {
+      email,
+      password
+    } = req.body;
+
+    const query = `SELECT * FROM users WHERE email='${email}'`;
+    return connectDB.query(query)
+      .then((result) => {
+        if (result.rowCount === 0) {
+          res.status(400).json({ status: 400, error: 'Account does not exist' });
+        }
+        return res.status(200).json({ message: 'You are successfully logged in' });
+      })
+      .catch((error) => {
+        if (`Key (email)!=(${email})` || `Key (password)!=(${password})`) {
+          return res.status(400).send({ status: 'error', message: 'Invalid Email or Password' });
+        }
+        res.status(500).json({ status: 500, error: 'Error logging in' });
+      });
   }
 }
 
