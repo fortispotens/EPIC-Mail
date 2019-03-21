@@ -15,11 +15,19 @@ const createTables = () => {
 
       CREATE TABLE messages(
         id SERIAL PRIMARY KEY,
-        createdOn TIMESTAMP WITH TIME ZONE,
+        role TIMESTAMP WITH TIME ZONE,
         subject VARCHAR(100) NOT NULL,
         message VARCHAR(500) NOT NULL,
         status VARCHAR(10) NOT NULL DEFAULT 'UNREAD'
       );
+
+      CREATE TABLE groups(
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(100) NOT NULL,
+        groupOwnerId VARCHAR(100) NOT NULL,
+      );
+
+
   `;
 
   return client.query(tables)
