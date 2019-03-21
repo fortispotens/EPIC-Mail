@@ -64,6 +64,18 @@ class GroupController {
       message: 'Group successfully deleted'
     });
   }
+
+  static creatNewGroupUser(req, res) {
+    if (!req.body.role) {
+      return res.status(400).send({ message: 'Please provide information for group user role' });
+    }
+    const createdGroupUser = GroupModel.newGroupUser(req.body);
+    return res.status(201).send({
+      status: res.statusCode,
+      message: 'Group created successfully',
+      createdGroupUser
+    });
+  }
 }
 
 export default GroupController;
