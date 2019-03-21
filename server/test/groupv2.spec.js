@@ -11,7 +11,6 @@ import MessageModel from '../v2/models/message.model';
 chai.use(chaiHttp);
 const request = chai.request(app);
 
-before(dbMigration);
 
 const createdGroup = GroupModel.newGroup('group');
 const allGroups = GroupModel.allGroups();

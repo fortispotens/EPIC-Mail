@@ -4,6 +4,7 @@
   "description": "Node.js server for EPIC-Mail",
   "main": "server.js",
   "scripts": {
+    "pretest": "npm run create-table",
     "test": "nyc mocha --require @babel/register --require @babel/polyfill server/test --exit",
     "test-watch": "nyc mocha --require @babel/register --require @babel/polyfill -w server/test --exit",
     "start": "node build/server.js",
@@ -37,6 +38,7 @@
     "dotenv": "^7.0.0",
     "expect": "^24.3.1",
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
     "mocha": "^6.0.2",
     "moment": "^2.24.0",
     "pg": "^7.9.0",

@@ -10,8 +10,8 @@ class User {
     const newUser = {
       id: this.users.length + 1,
       email: data.email,
-      firstName: data.firstName,
-      lastName: data.lastName,
+      firstname: data.firstname,
+      lastname: data.lastname,
       password: data.password
     };
     this.users.push(newUser);
