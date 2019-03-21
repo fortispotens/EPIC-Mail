@@ -11,7 +11,8 @@
     "build": "babel server --out-dir build",
     "lint": "./node_modules/.bin/eslint server/test/*.js",
     "coverage": "nyc --reporter=lcov --reporter=html --reporter=text mocha --require @babel/register server/test/*.js --exit",
-    "coveralls": "nyc mocha --require @babel/register server/test/*.js --exit"
+    "coveralls": "nyc mocha --require @babel/register server/test/*.js --exit",
+    "create-table": "babel-node ./server/db/db.js --exit"
   },
   "repository": {
     "type": "git",
@@ -33,10 +34,12 @@
     "body-parser": "^1.18.3",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
+    "dotenv": "^7.0.0",
     "expect": "^24.3.1",
     "express": "^4.16.4",
     "mocha": "^6.0.2",
     "moment": "^2.24.0",
+    "pg": "^7.9.0",
     "request": "^2.88.0",
     "uuid": "^3.3.2"
   },
