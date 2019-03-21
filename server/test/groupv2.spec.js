@@ -114,7 +114,7 @@ describe('Groups', () => {
       const groupUser = {
         userId: 2,
         role: 'Food Committee'
-      }
+      };
       chai.request(app)
         .post('api/v2/groups/:id/user')
         .end((err, res) => {
