@@ -52,6 +52,18 @@ class GroupController {
       editGroupName
     });
   }
+
+  static deleteSpecificGroup(req, res) {
+    const group = GroupModel.oneGroup(Number(req.params.id));
+    if (!group) {
+      res.status(404).json({ message: 'Group is not found' });
+    }
+    GroupModel.deleteOneGroup(Number(req.params.id));
+    res.status(204).send({
+      status: res.statusCode,
+      message: 'Group successfully deleted'
+    });
+  }
 }
 
 export default GroupController;
