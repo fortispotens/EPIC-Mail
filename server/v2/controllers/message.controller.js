@@ -55,15 +55,18 @@ class MessageController {
   }
 
   static getUnreadMessages(req, res) {
-    const unreadMessages = MessageModel.fetchUnreadMessages(req.params.status === 'unread');
-    if (unreadMessages.length === 0) {
-      return res.status(404).send({ message: 'Sorry, no unread messages' });
-    }
-    return res.status(200).send({
-      status: res.statusCode,
-      message: 'Fetched all unread Messages successfully',
-      unreadMessages
-    });
+    const query = `SELECT * FROM messages WHERE status=${req.params.status}`;
+    return connectDB.query(query)
+      .then((result) => {
+        if (result.rowCount === 0) {
+          res.status(400).send({ status: 400, error: 'Message does not exist' });
+        }
+        return res.status(200).send({ message: 'Message successfully retrieved unread messages', data: result.rows });
+      })
+      .catch((error) => {
+        console.log(error);
+        res.status(500).send({ status: 500, error: 'Error fetching unread message(s)' });
+      });
   }
 
   static getSentMessages(req, res) {
@@ -79,15 +82,24 @@ class MessageController {
   }
 
   static deleteSpecificMessage(req, res) {
-    const message = MessageModel.fetchSpecificMessage(Number(req.params.id));
-    if (!message) {
-      res.status(404).send({ message: 'Message is not found' });
-    }
-    MessageModel.deleteOneMessage(Number(req.params.id));
-    res.status(204).send({
-      status: res.statusCode,
-      message: 'Message successfully deleted'
-    });
+    const query = `SELECT * FROM messages WHERE id=${req.params.id}`;
+    return connectDB.query(query)
+      .then((result) => {
+        if (result.rowCount === 0) {
+          res.status(400).send({ status: 400, error: 'Message does not exist' });
+        }
+        const deleteQuery = `DELETE FROM messages WHERE id=${result.rows[0].id}`;
+        return connectDB.query(deleteQuery)
+          .then(() => res.status(200).send({ message: 'Message successfully deleted', data: result.rows[0] }))
+          .catch((error) => {
+            console.log(error);
+            res.status(500).send({ status: 500, error: 'Error deleting the specific message' });
+          });
+      })
+      .catch((error) => {
+        console.log(error);
+        res.status(500).send({ status: 500, error: 'Error deleting the specific message' });
+      });
   }
 }
 
