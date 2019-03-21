@@ -20,7 +20,7 @@ class MessageController {
         return res.status(500).send({ staus: 500, message: 'Message could not be sent' });
       })
       .catch((error) => {
-        console.log(error)
+        console.log(error);
         res.status(500).send({ status: 500, message: 'Error sending message' });
       });
   }
