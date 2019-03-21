@@ -1,4 +1,5 @@
 import GroupModel from '../models/group.model';
+import MessageModel from '../models/message.model';
 
 
 class GroupController {
@@ -74,6 +75,21 @@ class GroupController {
       status: res.statusCode,
       message: 'Group created successfully',
       createdGroupUser
+    });
+  }
+
+  static sendNewMessage(req, res) {
+    if (!req.body.subject) {
+      return res.status(400).json({ message: 'Please provide a subject' });
+    }
+    if (!req.body.message) {
+      return res.status(400).json({ message: 'Please provide message body' });
+    }
+    const createdMessage = MessageModel.createNewMessage(req.body);
+    return res.status(201).json({
+      status: res.statusCode,
+      message: 'Message created successfully',
+      createdMessage
     });
   }
 }

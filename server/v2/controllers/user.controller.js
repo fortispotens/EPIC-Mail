@@ -1,4 +1,4 @@
-import UserModel from '../models/user.modelV2';
+import UserModel from '../models/user.model';
 
 
 class UserController {

@@ -4,6 +4,7 @@ import chaiHttp from 'chai-http';
 import app from '../app';
 
 import GroupModel from '../v2/models/group.model';
+import MessageModel from '../v2/models/message.model';
 
 
 chai.use(chaiHttp);
@@ -11,6 +12,7 @@ const request = chai.request(app);
 
 const createdGroup = GroupModel.newGroup('group');
 const allGroups = GroupModel.allGroups();
+const createMessage = MessageModel.createNewMessage('newMessage');
 
 const groups = [
   {
@@ -127,6 +129,32 @@ describe('Groups', () => {
           expect(groupUser).to.have.property('userId').to.deep.equal(2);
           expect(group).to.have.property('name').eql('Group 1');
           expect(groupUser).to.have.property('role').eql('Food Committee');
+          done();
+        });
+    });
+  });
+  describe('Send a message to group', () => {
+    it('it should send a new message to group ', (done) => {
+      const newMessage = {
+        statusCode: 201,
+        id: 1,
+        createdOn: 'Fri Mar 15 2019 19:02:50 GMT+0100 (WAT)',
+        subject: 'Developer',
+        message: 'We are learning how to become world-class',
+        status: 'unread'
+      };
+      chai.request(app)
+        .post('api/v2/groups/:id/user')
+        .end((err, res) => {
+          // expect(messages[0].statusCode).to.equal(200);
+          expect(newMessage.statusCode).to.equal(201);
+          expect(createMessage).to.be.a('object');
+          expect(newMessage).to.be.a('object');
+          expect(newMessage).to.have.property('id').to.deep.equal(1);
+          expect(newMessage).to.have.property('status').eql('unread');
+          expect(newMessage).to.have.property('subject').eql('Developer');
+          expect(newMessage).to.have.property('createdOn').to.deep.equal('Fri Mar 15 2019 19:02:50 GMT+0100 (WAT)');
+          expect(newMessage).to.have.property('message').to.deep.equal('We are learning how to become world-class');
           done();
         });
     });
