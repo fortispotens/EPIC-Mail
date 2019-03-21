@@ -159,4 +159,41 @@ describe('Groups', () => {
         });
     });
   });
+  describe('Get All Grou Userss', () => {
+    it('it should GET all the group users', (done) => {
+      chai.request(app)
+        .get('api/v2/groups/:id/users')
+        .end((err, res) => {
+          expect(groups[0].statusCode).to.equal(200);
+          expect(groups).to.be.an('array');
+          expect(group).to.be.a('object');
+          expect(group).to.have.property('id').to.deep.equal(1);
+          expect(group).to.have.property('name').eql('Group 1');
+          expect(group).to.have.property('role').eql('Food Committee');
+          done();
+        });
+    });
+  });
+  describe('Delete a group user', () => {
+    it('it should DELETE a group', (done) => {
+      const groupUser = {
+        statusCode: 200,
+        userId: 1,
+        name: 'Group 5',
+        role: 'Food Committee',
+      };
+      chai.request(app)
+        .delete('api/v2/groups/:id/users/:id')
+        .end((err, res) => {
+          expect(groups[0].statusCode).to.equal(200);
+          expect(groups).to.be.an('array');
+          expect(groups[0]).to.be.an('object');
+          expect(groupUser).to.be.a('object');
+          expect(groupUser).to.have.property('userId').to.deep.equal(1);
+          expect(groupUser).to.have.property('name').eql('Group 5');
+          expect(groupUser).to.have.property('role').eql('Food Committee');
+          done();
+        });
+    });
+  });
 });

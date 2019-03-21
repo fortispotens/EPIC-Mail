@@ -40,6 +40,20 @@ class Group {
     this.groupUsers.push(groupUser);
     return groupUser;
   }
+
+  allGroupUsers() {
+    return this.groupUsers;
+  }
+
+  oneGroupUser(userId) {
+    return this.groupUsers.find(groupUser => groupUser.userId === userId);
+  }
+
+  deleteOneGroupUser(userId) {
+    const groupUser = this.oneGroupUser(userId);
+    const groupIndex = this.groupUsers.indexOf(groupUser);
+    return this.groupUsers.splice(groupIndex, 1);
+  }
 }
 
 export default new Group();

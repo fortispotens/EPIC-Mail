@@ -92,6 +92,30 @@ class GroupController {
       createdMessage
     });
   }
+
+  static fetchAllGroupUsers(req, res) {
+    const fetchedAllGroupUsers = GroupModel.allGroupUsers();
+    if (fetchedAllGroupUsers.length === 0 || !fetchedAllGroupUsers) {
+      return res.status(400).send({ message: 'There are no groups users available' });
+    }
+    return res.status(200).send({
+      status: res.statusCode,
+      message: 'Fetched All groups users successfully',
+      fetchedAllGroupUsers
+    });
+  }
+
+  static deleteSpecificGroupUser(req, res) {
+    const groupUser = GroupModel.oneGroupUser(Number(req.params.id));
+    if (!groupUser) {
+      res.status(404).json({ message: 'Group user not found' });
+    }
+    GroupModel.deleteOneGroupUser(Number(req.params.id));
+    res.status(204).send({
+      status: res.statusCode,
+      message: 'Group user successfully deleted'
+    });
+  }
 }
 
 export default GroupController;
