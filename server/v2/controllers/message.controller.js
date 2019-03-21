@@ -36,19 +36,22 @@ class MessageController {
       })
       .catch((error) => {
         res.status(500).send({ status: 500, error: 'Error fetching all messages' });
-    });
+      });
   }
 
   static getSpecificMessage(req, res) {
-    const specificMessage = MessageModel.fetchSpecificMessage(Number(req.params.id));
-    if (!specificMessage) {
-      return res.status(404).send({ message: 'Sorry, message not found' });
-    }
-    return res.status(200).send({
-      status: res.statusCode,
-      message: 'Fetched Message successfully',
-      specificMessage
-    });
+    const query = `SELECT * FROM messages WHERE id=${req.params.id}`;
+    return connectDB.query(query)
+      .then((result) => {
+        if (result.rowCount === 0) {
+          res.status(400).send({ status: 400, error: 'Message does not exist' });
+        }
+        return res.status(200).send({ message: 'Message successfully retrieved', data: result.rows[0] });
+      })
+      .catch((error) => {
+        console.log(error);
+        res.status(500).send({ status: 500, error: 'Error fetching the specific message' });
+      });
   }
 
   static getUnreadMessages(req, res) {
