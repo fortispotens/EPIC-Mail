@@ -19,7 +19,7 @@ const createTables = () => {
     createdOn TIMESTAMP DEFAULT now(),
     subject VARCHAR(100) NOT NULL,
     message VARCHAR(500) NOT NULL,
-    status VARCHAR(10) NOT NULL DEFAULT 'UNREAD'
+    status VARCHAR(100) NOT NULL DEFAULT 'UNREAD'
   );
 
   CREATE TABLE groups(

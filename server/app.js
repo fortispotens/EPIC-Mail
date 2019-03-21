@@ -9,7 +9,6 @@ import GroupRoutesv2 from './v2/routes/groups.route';
 
 const app = express();
 
-app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
