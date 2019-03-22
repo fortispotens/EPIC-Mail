@@ -13,7 +13,7 @@
     "lint": "./node_modules/.bin/eslint server/test/*.js",
     "coverage": "nyc --reporter=lcov --reporter=html --reporter=text mocha --require @babel/register server/test/*.js --exit",
     "coveralls": "nyc mocha --require @babel/register server/test/*.js --exit",
-    "create-table": "babel-node ./server/db/db.js --exit",
+    "create-table": "babel-node ./server/db/db.js --exit"
   },
   "repository": {
     "type": "git",
