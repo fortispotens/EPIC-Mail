@@ -8,42 +8,81 @@
 This web application will help people exchange
 messages/information over the internet.
 
-## Getting Started
+## Features
 
-These instructions will help you a have a look at the User Interface Templates developed for the application. You can also have a look on different pages and views contained in the web application.
+The features listed here are can be tested on Postman by passing the url endpoints to perform the following features:
 
-### Prerequisites
+Create a user account
+Login a user
+Create or send a mail
+Fetch all received messages
+Fetch all unread received messages
+Fetch all sent messages
+Fetch a specific email record
+Delete a specific email record
+Create a group
+Fetch a specific group record
+Fetch all groups records
+Delete a specific group
+Add a user to a group
+Delete a user from a specific group
+Create or send an email to a group
 
-Things you need to have to be able to have a look at the User Interface for this web application
-
-1. Should have a computer (Mac, Windows, or Linux OS), OR a mobile phone.
-2. Should have internet connection on the computer or mobile phone
-3. The computer or mobile phone should have a web browser (e.g. Google Chrome, Firefox, Opera, Microsft Edge, Safari, etc) installed and running on them.
-
-
-## Viewing the Web App User Interface
-
-While the browser is open and running on the computer or mobile phone, on the address bar, type and navigate to https://riseagain47.github.io/EPIC-Mail/ to explore the user interface for the web application.
-
-### Steps to take while navigating through the Application
-
-1. These is a landing page which has a call-to-action button (Send An Email). You can click on it to start or use the sign-in or sign-up buttons on the navigation bar to start.
-2. All the required fields in the forms (sign-in and sign-up forms) have to field in order to gain access to the web application
-
-3. There is a logout button on the navigation bar to enable you go back to the landing page.
-
-## Built With
-
-* HTML5
-* CSS3
+## Technologies Used
+* Nodejs: an open source server framework that allows you to run JavaScript on the server.
+* Express: open source server-side framework for starting out Javascript server quickly on the fly.
+* Pivotal Tracker: an open source projement management tool for managing different stages of teh development process.
 
 
-## Authors
+## Link to github pages
 
+https://riseagain47.github.io/EPIC-Mail/
+
+## Link to API endpoints 
+https://epic-mail-tobe.herokuapp.com/
+
+
+## API endpoints
+
+| HTTP VERB | ENDPOINT                                | FUCTIONALITY                        |
+| --------- | ------------------------------          | ------------------------------------|
+| POST      | api/v2/auth/signup                      | Create a user account               |
+| POST      | api/v2/auth/signup                      | Login a user                        |
+| POST      | api/v2/messages                         | Create or send a mail               |
+| GET       | api/v2/messages                         | Fetch all received messages         |
+| GET       | api/v2/messages/status/unread           | Fetch all unread received messages  |
+| GET       | api/v2/messages/status/sent             | Fetch all sent messages             |
+| GET       | api/v2/messages/:id                     | Fetch a specific email record       |
+| DELETE    | api/v2/messages/:id                     | Delete a specific email record      |
+| POST      | api/v2/groups                           | Create a group                      |
+| GET       | api/v2/group/:group-id                  | Fetch a specific group record       |
+| PATCH     | api/v2/groups/:group-id/name            | Fetch all groups records            |
+| DELETE    | api/v2/groups/:group-id                 | Delete a specific group             |
+| POST      | api/v2/groups/:groud-id/users           | Add a user to a group               |
+| DELETE    | api/v2/groups/:group-id/users/:user-id  | Delete a user from a specific group |
+| POST      | api/v2/groups/:groud-id/messages        | Create or send an email to a group  |
+
+
+
+## How to clone the project:
+
+To clone this repository: 
+
+* Ensure you have git and node.js installed 
+
+* Run `git clone https://github.com/riseagain47/EPIC-Mail`
+
+* Run `npm install`
+
+* Run `npm start` to start the server
+
+* Follow the UI directory to view UI pages
+
+
+## Author
 * Name: Tobechukwu Obitube
 * Email: riseagain47@gmail.com
 
 
 ## Acknowledgments
-
-* Built out of my passion to Learn and Grow.
+* My sincere gratitude goes to the Bootcamp Cycle 42 family (LF, LFAs, VFLAs, Fellow Bootcampers)

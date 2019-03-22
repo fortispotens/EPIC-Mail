@@ -9,12 +9,11 @@
     "test-watch": "nyc mocha --require @babel/register --require @babel/polyfill -w server/test --exit",
     "start": "node build/server.js",
     "dev-start": "nodemon --exec babel-node server/server.js",
-    "build": "babel server --out-dir build",
+    "build": "babel server --out-dir build && npm run create-table",
     "lint": "./node_modules/.bin/eslint server/test/*.js",
     "coverage": "nyc --reporter=lcov --reporter=html --reporter=text mocha --require @babel/register server/test/*.js --exit",
     "coveralls": "nyc mocha --require @babel/register server/test/*.js --exit",
     "create-table": "babel-node ./server/db/db.js --exit",
-    "heroku-postbuild": "npm run create-table"
   },
   "repository": {
     "type": "git",
