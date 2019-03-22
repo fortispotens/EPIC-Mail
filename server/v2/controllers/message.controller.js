@@ -20,7 +20,6 @@ class MessageController {
         return res.status(500).send({ staus: 500, message: 'Message could not be sent' });
       })
       .catch((error) => {
-        console.log(error);
         res.status(500).send({ status: 500, message: 'Error sending message' });
       });
   }
@@ -49,7 +48,6 @@ class MessageController {
         return res.status(200).send({ message: 'Message successfully retrieved', data: result.rows[0] });
       })
       .catch((error) => {
-        console.log(error);
         res.status(500).send({ status: 500, error: 'Error fetching the specific message' });
       });
   }
@@ -64,7 +62,6 @@ class MessageController {
         return res.status(200).send({ message: 'Message successfully retrieved unread messages', data: result.rows });
       })
       .catch((error) => {
-        console.log(error);
         res.status(500).send({ status: 500, error: 'Error fetching unread message(s)' });
       });
   }
@@ -92,12 +89,10 @@ class MessageController {
         return connectDB.query(deleteQuery)
           .then(() => res.status(200).send({ message: 'Message successfully deleted', data: result.rows[0] }))
           .catch((error) => {
-            console.log(error);
             res.status(500).send({ status: 500, error: 'Error deleting the specific message' });
           });
       })
       .catch((error) => {
-        console.log(error);
         res.status(500).send({ status: 500, error: 'Error deleting the specific message' });
       });
   }

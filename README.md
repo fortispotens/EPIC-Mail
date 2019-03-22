@@ -38,7 +38,7 @@ Create or send an email to a group
 
 https://riseagain47.github.io/EPIC-Mail/
 
-## Link to API endpoints 
+## Link to API endpoints
 https://epic-mail-tobe.herokuapp.com/
 
 
@@ -66,9 +66,9 @@ https://epic-mail-tobe.herokuapp.com/
 
 ## How to clone the project:
 
-To clone this repository: 
+To clone this repository:
 
-* Ensure you have git and node.js installed 
+* Ensure you have git and node.js installed
 
 * Run `git clone https://github.com/riseagain47/EPIC-Mail`
 

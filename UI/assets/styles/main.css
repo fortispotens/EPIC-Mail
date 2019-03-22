@@ -154,7 +154,7 @@ table tr td, table tr th {
 
 
 @media all and (max-width:550px) and (min-width:0px) {
-  
+
   .header, .footer {
     min-height: 15vh;
     display: flex;
@@ -166,7 +166,7 @@ table tr td, table tr th {
     font-size: 2em;
     margin-top: 5%;
   }
-  
+
   .main {
     min-height: 70vh;
   }
@@ -194,5 +194,5 @@ table tr td, table tr th {
   #reset-link {
     line-height: 20px;
   }
-  
+
 }

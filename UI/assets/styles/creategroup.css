@@ -67,7 +67,7 @@ tbody, td, tr:nth-child(odd) {
 }
 
 @media all and (max-width:550px) and (min-width:0px) {
-  
+
   table {
     min-width: 80vw;
   }
@@ -79,7 +79,7 @@ tbody, td, tr:nth-child(odd) {
     min-width: 80vw;
     margin-bottom: 0.4rem;
   }
-  
+
   .create-group input[type='button'] {
     min-width: 80vw;
   }
