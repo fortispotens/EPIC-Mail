@@ -1,11 +1,12 @@
 import { Router } from 'express';
 
 import MessageController from '../controllers/message.controller';
+import { messageValidate } from '../../mid/validator';
 
 
 const router = Router();
 
-router.post('/', MessageController.sendNewMessage);
+router.post('/', messageValidate, MessageController.sendNewMessage);
 router.get('/', MessageController.getAllMessages);
 router.get('/:id', MessageController.getSpecificMessage);
 router.get('/status/unread', MessageController.getUnreadMessages);

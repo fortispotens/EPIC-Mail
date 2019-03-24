@@ -25,7 +25,7 @@ const createTables = () => {
   CREATE TABLE groups(
     id SERIAL PRIMARY KEY,
     name  VARCHAR(100) NOT NULL,
-    groupOwnerId VARCHAR(100) NOT NULL
+    groupOwnerId FOREIGN KEY REFERENCES users(id)
   );
   `;
 

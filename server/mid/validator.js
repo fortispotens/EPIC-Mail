@@ -24,8 +24,26 @@ const loginValidate = (req, res, next) => {
     .check();
 };
 
+const messageValidate = (req, res, next) => {
+  const valid = customMiddleware(req, res, next);
+
+  valid
+    .hasElement('subject')
+    .hasElement('message')
+    .check();
+};
+
+const groupValidate = (req, res, next) => {
+  const valid = customMiddleware(req, res, next);
+
+  valid
+    .hasElement('name')
+    .check();
+};
 
 export {
   signupValidate,
-  loginValidate
+  loginValidate,
+  messageValidate,
+  groupValidate
 };

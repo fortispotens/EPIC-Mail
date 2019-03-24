@@ -1,18 +1,33 @@
 import GroupModel from '../models/group.model';
 import MessageModel from '../models/message.model';
 
+import connectDB from '../../connectDB';
+
 
 class GroupController {
   static createNewGroup(req, res) {
-    if (!req.body.name || !req.body.role) {
-      return res.status(400).send({ message: 'Please provide information for group name and role' });
-    }
-    const createdGroup = GroupModel.newGroup(req.body);
-    return res.status(201).send({
-      status: res.statusCode,
-      message: 'Group created successfully',
-      createdGroup
-    });
+    const {
+      name,
+      groupOwnerId,
+    } = req.body;
+
+    const query = `INSERT INTO users (name, groupOwnerId)
+                    VALUES('${name}', '${groupOwnerId}') returning * `;
+    return connectDB.query(query)
+      .then((result) => {
+        if (result.rowCount >= 1) {
+          return res.status(200).send({ status: 200, message: 'Group created successfully', data: result.rows[0] });
+        }
+
+        return res.status(500).send({ staus: 500, message: 'The group could not be created' });
+      })
+      .catch((error) => {
+        console.log(error)
+        if (error.detail === `Key (name)=(${name}) already exists.`) {
+          return res.status(400).send({ status: 'error', message: 'Group already exist' });
+        }
+        return res.status(500).send({ status: 500, message: 'Error creating group' });
+      });
   }
 
   static fetchAllGroups(req, res) {
