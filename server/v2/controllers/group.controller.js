@@ -7,12 +7,13 @@ import connectDB from '../../connectDB';
 class GroupController {
   static createNewGroup(req, res) {
     const {
-      name,
-      groupOwnerId,
+      name
+      // groupOwnerId,
     } = req.body;
 
-    const query = `INSERT INTO users (name, groupOwnerId)
-                    VALUES('${name}', '${groupOwnerId}') returning * `;
+
+    const query = `INSERT INTO groups (name)
+                    VALUES('${name}') returning * `;
     return connectDB.query(query)
       .then((result) => {
         if (result.rowCount >= 1) {
@@ -22,7 +23,6 @@ class GroupController {
         return res.status(500).send({ staus: 500, message: 'The group could not be created' });
       })
       .catch((error) => {
-        console.log(error)
         if (error.detail === `Key (name)=(${name}) already exists.`) {
           return res.status(400).send({ status: 'error', message: 'Group already exist' });
         }

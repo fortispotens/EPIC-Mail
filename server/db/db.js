@@ -7,7 +7,7 @@ const createTables = () => {
   DROP TABLE IF EXISTS groups CASCADE;
 
   CREATE TABLE users(
-    id SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY UNIQUE,
     email VARCHAR(128) UNIQUE,
     firstname VARCHAR(30) NOT NULL,
     lastname VARCHAR(30) NOT NULL,
@@ -15,7 +15,7 @@ const createTables = () => {
   );
 
   CREATE TABLE messages(
-    id SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY UNIQUE,
     createdOn TIMESTAMP DEFAULT now(),
     subject VARCHAR(100) NOT NULL,
     message VARCHAR(500) NOT NULL,
@@ -24,8 +24,8 @@ const createTables = () => {
 
   CREATE TABLE groups(
     id SERIAL PRIMARY KEY,
-    name  VARCHAR(100) NOT NULL,
-    groupOwnerId FOREIGN KEY REFERENCES users(id)
+    name VARCHAR(100) UNIQUE,
+    groupOwnerId INTEGER REFERENCES users(id)
   );
   `;
 
